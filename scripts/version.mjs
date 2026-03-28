@@ -10,6 +10,4 @@ function replace(filePath) {
   writeFileSync(filePath, content.replace(currentVersion, newVersion), 'utf-8')
 }
 
-replace('./src/style-settings/workspace.scss')
-replace('./src/workspace/modal.scss')
 replace('./manifest.json')

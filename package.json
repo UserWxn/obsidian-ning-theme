@@ -1,6 +1,6 @@
 {
   "name": "Ning",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "obsidian theme dev",
   "scripts": {
     "dev": "node scripts/dev.mjs src/dev.scss",
