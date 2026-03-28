@@ -84,26 +84,27 @@ a {
 .metadata-container .internal-link,
 .internal-link {
   color: var(--link-color);
-  text-underline-offset: var(--link-underline-offset);
-  text-decoration-color: var(--link-decoration-color);
+  // text-underline-offset: var(--link-underline-offset);
+  // text-decoration-color: var(--link-decoration-color);
 
   &:hover {
     color: var(--link-color-hover);
-    text-decoration-color: var(--link-decoration-color-hover);
+    // text-decoration-color: var(--link-decoration-color-hover);
   }
 
-  &:active {
-    opacity: var(--link-opacity-active);
-  }
+  // &:active {
+  //   opacity: var(--link-opacity-active);
+  // }
 
   &.is-unresolved {
     color: var(--link-unresolved-color);
     text-underline-offset: var(--link-underline-offset);
     text-decoration-color: var(--link-unresolved-decoration-color);
-
+    opacity: 0.5;
     &:hover {
       color: var(--link-unresolved-color-hover);
       text-decoration-color: var(--link-unresolved-decoration-color-hover);
+      opacity: 1;
     }
 
     &:active {
@@ -170,11 +171,27 @@ a {
 }
 
 .external-link {
-  background-image: linear-gradient(transparent, transparent),
+  background-image:
+    linear-gradient(transparent, transparent),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(136, 136, 136)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'%3E%3C/line%3E%3Cpolyline points='7 7 17 7 17 17'%3E%3C/polyline%3E%3C/svg%3E");
   background-size: calc(var(--font-text-size) + 0.2em), 1em;
   background-position-x: right;
   background-position-y: center;
 }
 
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link:not(.is-unresolved),
+.markdown-rendered .internal-link:not(.is-unresolved) {
+  background-color: rgba(var(--color-yellow-rgb), 0.1);
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: background-color 0.5s ease;
+  box-decoration-break: clone;
+  text-decoration-line: none;
 
+  &:hover {
+    background-color: rgba(var(--color-yellow-rgb), 0.3);
+    color: var(--link-color);
+    text-decoration-line: none;
+  }
+}
