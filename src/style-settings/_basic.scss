@@ -1,0 +1,114 @@
+/* @settings
+
+name: 📦 Ning 
+id: ning-editor
+settings:
+    -   id: workspace-setting
+        title: Workspace
+        type: heading
+        level: 2
+        collapsed: true
+	-
+		id: layout-style
+		title: Layout style
+		type: class-select
+		allowEmpty: false
+		default: layout-minimal
+		options:
+			-
+				label: Minimal
+				value: layout-minimal
+			-
+				label: Cards
+				value: layout-cards
+			-
+				label: Border
+				value: layout-border
+			-
+				label: Frame
+				value: layout-frame
+			-
+				label: macOS
+				value: layout-macos
+
+    -
+        id: heading-options
+        title: Heading
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: heading-style
+        title: 标题级别
+        type: class-select
+        allowEmpty: false
+        default: heading-indicator-auto
+        options:
+            -
+                label: Disable
+                value: .heading-indicator-disable
+            -
+                label: Auto Hide
+                value: heading-indicator-auto
+            -
+                label: Fixed
+                value: heading-indicator-fixed
+
+    -
+        id: callout-options
+        title: Callouts
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: callout-style
+        title: Callout Style
+        type: class-select
+        allowEmpty: false
+        default: callout-normal
+        options:
+            -
+                label: Default
+                value: callout-normal
+            -
+                label: Bordered
+                value: callout-bordered
+            -
+                label: Card
+                value: callout-floating 
+    -
+        id: folder-options
+        title: Folders
+        type: heading
+        level: 2
+        collapsed: true
+    -
+		id: colorful-folders
+		title: Colorful folders
+		type: class-select
+		allowEmpty: false
+		default: colorful-folders-off
+		options:
+			-
+				label: None
+				value: colorful-folders-off
+			-
+				label: Dot
+				value: colorful-folders-dot
+			-
+				label: Indicator
+				value: colorful-folders-side
+			-
+				label: Frame
+				value: colorful-folders-frame
+			-
+				label: Subtle
+				value: colorful-folders-subtle
+			-
+				label: Strong
+				value: colorful-folders-strong
+			-
+				label: Monochrome
+				value: colorful-folders-mono
+
+*/

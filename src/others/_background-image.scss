@@ -1,0 +1,305 @@
+/* @settings
+name: Defult Background
+id: anuppuccin-custom-background
+settings:
+
+-
+  id: anp-custom-background-header
+  title: Background
+  description: 适用于默认主题，配合卡片布局效果更佳
+  type: heading
+  level: 1
+  collapsed: true
+-
+  id: custom-background-image-toggle
+  title: Enable Custom Background (WIP)
+  description: Not compatible with colorful frame
+  type: class-toggle
+-
+  id: anp-custom-background-light-header
+  title: Light Mode
+  description: 
+  type: heading
+  level: 2
+  collapsed: true
+-
+  id: anp-background-image-light
+  title: Custom Background Image URL
+  description: 'Formatted as url("https://link-to-image.png")'
+  type: variable-text
+  default: url("https://link-to-image.png")
+-
+  id: anp-custom-bg-brightness-light
+  title: Background brightness
+  type: variable-number-slider
+  min: 0
+  max: 2
+  step: 0.05
+  default: 0.7
+-
+  id: anp-custom-bg-blur-light
+  title: Background blur
+  type: variable-number-slider
+  min: 0
+  max: 20
+  step: 1
+  default: 5
+  format: px
+-
+  id: anp-custom-bg-card-fg-opacity-light
+  title: Container opacity
+  type: variable-number-slider
+  min: 0
+  max: 1
+  step: 0.05
+  default: 0.4
+
+-
+  id: anp-custom-background-dark-header
+  title: Dark Mode
+  description: 
+  type: heading
+  level: 2
+  collapsed: true
+-
+  id: anp-background-image-dark
+  title: Custom Background Image URL
+  description: 'Formatted as url("https://link-to-image.png")'
+  type: variable-text
+  default: url("https://link-to-image.png")
+-
+  id: anp-custom-bg-brightness-dark
+  title: Background brightness
+  type: variable-number-slider
+  min: 0
+  max: 1
+  step: 0.05
+  default: 0.7
+-
+  id: anp-custom-bg-blur-dark
+  title: Background blur
+  type: variable-number-slider
+  min: 0
+  max: 20
+  step: 1
+  default: 5
+  format: px
+-
+  id: anp-custom-bg-card-fg-opacity-dark
+  title: Container opacity
+  type: variable-number-slider
+  min: 0
+  max: 1
+  step: 0.05
+  default: 0.4
+-
+  id: recommend-background 
+  title: 推荐壁纸
+  description: 推荐一些个人使用的壁纸
+  type: heading
+  level: 1
+  collapsed: true
+-
+  id: recommend-background-light
+  title: 浅色模式 
+  description: "
+  - [https://w.wallhaven.cc/full/gp/wallhaven-gp17xe.jpg](https://w.wallhaven.cc/full/gp/wallhaven-gp17xe.jpg)"
+  type: info-text
+  markdown: true
+-
+  id: recommend-background-dark
+  title: 深色模式 
+  description: "
+  - 粉色天空：[https://w.wallhaven.cc/full/d6/wallhaven-d6mg33.png](https://w.wallhaven.cc/full/d6/wallhaven-d6mg33.png)
+
+  - 女孩背影：[https://w.wallhaven.cc/full/vg/wallhaven-vg7lv3.jpg](https://w.wallhaven.cc/full/vg/wallhaven-vg7lv3.jpg)
+
+  - 城市雨夜：[https://w.wallhaven.cc/full/x6/wallhaven-x6ypl3.png](https://w.wallhaven.cc/full/x6/wallhaven-x6ypl3.png)
+
+  - 夜晚街道：[https://w.wallhaven.cc/full/ex/wallhaven-ex136k.jpg](https://w.wallhaven.cc/full/ex/wallhaven-ex136k.jpg)"
+  type: info-text
+  markdown: true
+*/
+
+body.theme-light {
+  --anp-background-image: var(--anp-background-image-light);
+  --anp-custom-bg-brightness: var(--anp-custom-bg-brightness-light);
+  --anp-custom-bg-blur: var(--anp-custom-bg-blur-light);
+  --anp-custom-bg-card-fg-opacity: var(--anp-custom-bg-card-fg-opacity-light);
+  /* --background-base: 238, 230, 221; */
+  /* --background-mantel: 230, 219, 209; */
+}
+body.theme-dark {
+  --anp-background-image: var(--anp-background-image-dark);
+  --anp-custom-bg-brightness: var(--anp-custom-bg-brightness-dark);
+  --anp-custom-bg-blur: var(--anp-custom-bg-blur-dark);
+  --anp-custom-bg-card-fg-opacity: var(--anp-custom-bg-card-fg-opacity-dark);
+  // --background-base: 1, 41, 51;
+  // --background-mantel: 0, 33, 41;
+  --background-base: 26, 29, 30;
+  --background-mantel: 21, 23, 24;
+  //   --background-base: 33, 28, 27;
+  //   --background-mantel: 40, 34, 32;
+
+  //   --background-base: 23, 24, 28;
+  //   --background-mantel: 30, 31, 36;
+}
+
+.custom-background-image-toggle {
+  --card-background-color: transparent;
+  --card-foreground-color: rgba(
+    var(--background-base),
+    var(--anp-custom-bg-card-fg-opacity, 0.4)
+  );
+  --tab-inactive-color: rgba(
+    var(--background-mantle),
+    var(--anp-custom-bg-card-fg-opacity, 0.8)
+  );
+  --code-background: var(--card-foreground-color);
+
+  .app-container {
+    background: var(
+      --anp-background-image,
+      url("https://w.wallhaven.cc/full/9o/wallhaven-9ode5x.jpg")
+    );
+    background-size: cover;
+    background-color: transparent;
+  }
+  .horizontal-main-container {
+    backdrop-filter: brightness(var(--anp-custom-bg-brightness, 0.5))
+      blur(var(--anp-custom-bg-blur, 5px));
+    background-color: transparent;
+  }
+
+  .workspace {
+    background: transparent;
+
+    .workspace-split {
+      background-color: var(--tab-inactive-color);
+    }
+  }
+
+  //   &.anp-card-layout .workspace-split.mod-root .view-content {
+  //     background: transparent;
+  //   }
+  .workspace-tabs:not(.mod-stacked) {
+    --tab-background: var(--tab-inactive-color);
+    --tab-background-active: var(--card-foreground-color);
+    --tab-background-inactive: var(--tab-inactive-color);
+  }
+
+  .nav-folder.mod-root > .nav-folder-title {
+    background-color: var(--tab-inactive-color);
+  }
+  //   .canvas-wrapper,
+  //   .mod-macos.is-hidden-frameless:not(.is-popout-window)
+  //     .sidebar-toggle-button.mod-right,
+  //   &:not(.layout-cards).mod-macos.is-hidden-frameless:not(.is-popout-window)
+  //     .sidebar-toggle-button.mod-right,
+  //   &:is(.layout-cards) .workspace-ribbon.mod-left:before,
+  //   &:is(.layout-cards) .workspace-tab-header-container,
+  //   .workspace-split.mod-root {
+  //     background-color: transparent;
+  //   }
+  &:not(.layout-border) .workspace-tab-header-container,
+//   &:not(.layout-cards, .layout-minimal) .workspace-tabs .workspace-leaf,
+  &:not(.anp-card-layout) .workspace-split.mod-root .view-content,
+  &:not(.anp-card-layout) .workspace-ribbon,
+  &:not(.anp-card-layout) .workspace-ribbon.mod-left:before,
+  &:not(.anp-card-layout) .view-header,
+  &.is-focused:not(.anp-card-layout) .workspace-leaf.mod-active .view-header,
+  .kanban-plugin__lane,
+  .kanban-plugin__item-content-wrapper {
+    background-color: var(--card-foreground-color);
+  }
+  .kanban-plugin__item-title-wrapper,
+  &.is-focused .workspace-leaf.mod-active .view-header,
+  .workspace-ribbon {
+    background: transparent;
+  }
+  .workspace-fake-target-overlay:not(.is-in-sidebar)
+    .workspace-tabs:not(.mod-stacked)
+    .workspace-leaf,
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf,
+  .view-header,
+  .is-focused .workspace-leaf.mod-active .view-header {
+    background-color: transparent;
+  }
+  .view-header-title-container:not(.mod-at-end):after {
+    display: none;
+  }
+  .kanban-plugin .kanban-plugin__lane button:hover {
+    background-color: var(--card-foreground-color);
+  }
+  &:not(.layout-cards) {
+    .status-bar {
+      background: var(--card-foreground-color);
+      backdrop-filter: brightness(var(--anp-custom-bg-brightness, 0.5))
+        blur(var(--anp-custom-bg-blur, 5px));
+    }
+  }
+  &:is(.layout-cards) {
+    .status-bar {
+      background: transparent;
+      backdrop-filter: brightness(var(--anp-custom-bg-brightness, 0.5))
+        blur(var(--anp-custom-bg-blur, 5px));
+    }
+  }
+
+  /* ====================== */
+  //   &:is(.layout-cards) .workspace-split .mod-root,
+  &:is(.layout-cards) .workspace-tab-header-container {
+    background-color: var(--tab-inactive-color);
+  }
+
+  //   &:not(.layout-minimal, .layout-cards) .workspace-tab-header-container {
+  //     background-color: var(--card-background-color);
+  //   }
+
+  &:is(.layout-cards, .layout-border):not(.is-mobile)
+    .mod-sidedock
+    .workspace-tabs
+    .workspace-tab-container {
+    background-color: var(--card-foreground-color);
+  }
+
+  &:is(.layout-minimal)
+    .workspace-split:not(.mod-left-split)
+    .workspace-tabs
+    .workspace-tab-header-container,
+  &:is(.layout-minimal) .workspace > .mod-root,
+  &:is(.layout-minimal) .workspace-drawer.mod-right,
+  &:is(.layout-minimal) .mod-sidedock.mod-right-split,
+  &:is(.layout-minimal)
+    .mod-sidedock.mod-left-split
+    .workspace-tabs
+    .workspace-leaf,
+  &:is(.layout-minimal)
+    .mod-sidedock.mod-right-split
+    .workspace-tabs
+    .workspace-leaf {
+    background-color: var(--card-foreground-color);
+  }
+}
+
+// .workspace-tab-header.is-active {
+//   background-color: rgb(
+//     var(--background-base),
+//     var(--anp-custom-bg-card-fg-opacity)
+//   );
+// }
+
+/* 解决透明度低情况下的当前标签页底部的两个点的显示 */
+.workspace-split.mod-root .workspace-tab-header.is-active::before,
+.workspace-split.mod-root .workspace-tab-header.is-active::after {
+  box-shadow: none;
+}
+
+/* 关闭区域背景 */
+.is-hidden-frameless:not(.is-fullscreen).is-focused
+  .titlebar-button-container.mod-right {
+  background-color: transparent;
+}
+.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
+  background-color: transparent;
+}

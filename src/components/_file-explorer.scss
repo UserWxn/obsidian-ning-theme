@@ -1,0 +1,85 @@
+@use "sass:math";
+@use "sass:list";
+@use "sass:meta";
+@use "sass:string";
+
+// SETTINGS
+$range: 11;
+$colors: (var(--color-red), var(--color-cyan));
+$shiftColorsAtStart: 1;
+$shiftColorsAtEnd: 1;
+$gradientModels: ("hwb");
+
+@function to-string-trailing($number, $length) {
+  $output: "#{$number}";
+  @while string.length($output) < $length {
+    $output: "0#{$output}";
+  }
+  @return $output;
+}
+
+@mixin nav-folder-styling($pathStart, $color) {
+  .tree-item-self[data-path^="#{$pathStart}"] {
+    --nav-collapse-icon-color: color-mix(in srgb, #{$color}, gray 50%);
+
+    & + .tree-item-children {
+      --nav-indentation-guide-color: color-mix(
+        in srgb,
+        #{$color},
+        var(--indentation-guide-color) 75%
+      );
+    }
+
+    :is(.nav-folder > div > .iconize-icon, .nav-folder-title-content) {
+      color: #{$color};
+    }
+  }
+}
+
+.workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container
+  > div
+  > .tree-item {
+  // font-family: var(--font-monospace);
+  letter-spacing: -0.4px;
+  word-spacing: -2px;
+  --nav-item-size: 15px;
+
+  @for $i from 0 to ($range) {
+    $phase: calc(
+        ($i + $shiftColorsAtStart) /
+          ($range - 1 + $shiftColorsAtStart + $shiftColorsAtEnd)
+      ) *
+      (list.length($colors) - 1);
+
+    $colorIndex: math.floor($phase) + 1;
+    $fade: $phase % 1;
+
+    $model: $gradientModels;
+    @if meta.type-of($gradientModels) == "list" and $fade % 1 != 0 {
+      $model: list.nth($gradientModels, $colorIndex);
+    }
+    $color: none;
+    @if $fade % 1 == 0 {
+      $color: list.nth($colors, $colorIndex);
+    } @else {
+      $color: color-mix(
+        in #{$model},
+        #{list.nth($colors, $colorIndex)},
+        #{list.nth($colors, $colorIndex + 1)} #{$fade * 100%}
+      );
+    }
+
+    // $pathTarget: "#{to-string-trailing($i,2)} - ";
+    $pathTarget: "#{to-string-trailing($i * 10,2)}-";
+
+    @include nav-folder-styling($pathTarget, $color);
+  }
+
+  // @each $folderName, $color in (
+  //     "90" var(--color-red),
+  //     "99" var(--color-base-60),
+  // ) {
+  //     @include nav-folder-styling($folderName,$color)
+  // }
+}

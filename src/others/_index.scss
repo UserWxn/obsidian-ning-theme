@@ -1,0 +1,108 @@
+// @use "./background-image";
+@use "./banner";
+@use "./block-width";
+@use "./cssclasses";
+@use "./font";
+@use "./wide-views";
+
+// 启用连体  == ->
+.view-content > .markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view,
+.markdown-rendered {
+  font-feature-settings:
+    "dlig" 1,
+    "ss01" 1;
+}
+
+// 隐藏其他列表属性的选项弹窗，除了cssclasses
+.suggestion-container.mod-property-value:not([data-property-key="cssclasses"]) {
+  display: none;
+}
+
+// base数字类型左对齐
+.bases-table-cell .metadata-input-number,
+.bases-table-cell[data-property-type="number"] {
+  justify-content: initial;
+  text-align: initial;
+}
+
+// body.flexcyon-rtz-mode,
+// body{
+//   counter-reset: numTab 0;
+//   .workspace-tab-header-inner-title::before {
+//     content: counter(numTab);
+//     color: inherit;
+//     font-weight: bold;
+//     margin-right: 12px;
+//     font-size: var(--font-ui-medium);
+//     overflow: hidden;
+//   }
+//   .workspace-tab-header {
+//     counter-increment: numTab;
+//   }
+
+//   .mod-stacked .workspace-tab-header-inner-title::before {
+//     margin-bottom: 12px;
+//   }
+// }
+
+// body.flexcyon-rtz-mode,
+// body{
+//   --tab-stacked-font-size: 0px;
+//   .workspace-tabs .workspace-tab-header {
+//     --tab-width: 60px;
+//     .workspace-tab-header-inner-title {
+//       font-size: 0;
+//       &::before {
+//         margin-right: 0px;
+//       }
+//     }
+//   }
+// }
+
+// @function str-replace($string, $search, $replace: '') {
+//     $index: str-index($string, $search);
+//     @if $index {
+//         @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+//     }
+//     @return $string;
+// }
+
+// @each $tag, $col, $icon in (
+//     "Cafe" #9c8349 "☕",
+//     "Bistro" #cd932f "🍔",
+//     "Cash-only" #65b82a "💵",
+//     "Card-only" var(--color-blue-cyan) "💳",
+//     "Cash-n-card" var(--color-green-cyan) "💵💳",
+//     "Culture" var(--color-yellow) "🎭",
+//     "Restaurant" rgb(var(--callout-quote)) "🍽️",
+//     "Asian" var(--color-red) "🍜",
+//     "Indian" var(--color-orange) "🍛",
+//     "Exotic" var(--color-pink) "🥥",
+//     "Bar" var(--color-green-yellow) "🍸",
+//     "Pizzeria" var(--color-orange) "🍕",
+//     "Fast-food" var(--color-yellow-orange) "🍟",
+//     "Bowling" var(--color-red-quote) "🎳",
+//     ){
+//     span.cm-tag-#{str-replace($tag,"/")},
+//     a[href="##{$tag}"],
+//     .kanban-plugin__item-tags a.kanban-plugin__item-tag[href="##{$tag}"]
+//     {
+//         background-color: color-mix(in srgb, $col, transparent 80%);
+//         color: $col !important;
+//         &.cm-hashtag-begin:before {
+//             content: $icon;
+//             margin-left: -0.3em;
+//         }
+//     }
+//     a[href="##{$tag}"],.kanban-plugin__item-tags a.kanban-plugin__item-tag[href="##{$tag}"] {
+//         &:hover {
+//             color: $col;
+//             background-color: color-mix(in srgb, $col, transparent 70%);
+//         }
+//         &:before {
+//             content: $icon;
+//             margin-left: -0.3em;
+//         }
+//     }
+// }

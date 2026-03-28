@@ -1,0 +1,44 @@
+@use "./base";
+@use "./callout";
+@use "./checkboxes2";
+@use "./code";
+@use "./colorful-folders";
+// @use "./divider-line";
+// @use "./file-explorer";
+// @use "./footnote";
+// @use "./folder-icon";
+@use "./heading";
+@use "./image-filters";
+@use "./kbd";
+@use "./link";
+@use "./list";
+@use "./meta";
+@use "./quote";
+// @use "./rain-folder";
+// @use "./rain";
+@use "./tab";
+@use "./table";
+
+// 阅读模式下将已完成任务移动到列表底部，实际位置不变
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+ul > li.task-list-item[data-task="x" i] {
+  order: 1;
+}
+
+//己完成任务降低不透明度
+
+ul > li.task-list-item[data-task="x" i] {
+  opacity: var(--completed-task-opacity, 0.7);
+
+  & & {
+    opacity: 1;
+  }
+}
+
+body.theme-light {
+  -webkit-font-smoothing: antialiased;
+}

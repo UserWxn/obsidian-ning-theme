@@ -1,0 +1,41 @@
+.theme-dark {
+  /* Accent HSL values */
+  --accent-h: 254;
+  --accent-s: 80%;
+  --accent-l: 68%;
+
+  /* Backgrounds */
+  --background-primary: var(--color-base-00);
+  --background-primary-alt: var(--color-base-10);
+  --background-secondary: var(--color-base-20);
+  --background-modifier-hover: rgb(var(--mono-rgb-100), 7.5%);
+  --background-modifier-active-hover: hsl(var(--interactive-accent-hsl), 15%);
+  --background-modifier-border: var(--color-base-30);
+  --background-modifier-border-hover: var(--color-base-35);
+  --background-modifier-border-focus: var(--color-base-40);
+  --background-modifier-error-rgb: var(--color-red-rgb);
+  --background-modifier-error: var(--color-red);
+  --background-modifier-error-hover: var(--color-red);
+  --background-modifier-success-rgb: var(--color-green-rgb);
+  --background-modifier-success: var(--color-green);
+  --background-modifier-message: rgb(0, 0, 0, 90%);
+
+  /* Inputs */
+  --background-modifier-form-field: var(--color-base-00);
+
+  /* Text */
+  --text-normal: var(--color-base-100);
+  --text-muted: var(--color-base-70);
+  --text-faint: var(--color-base-50);
+  --text-on-accent: var(--text-normal);
+  --text-error: var(--color-red);
+  --text-success: var(--color-green);
+  --text-selection: hsla(var(--color-accent-hsl), 2%);
+  --text-accent: var(--color-accent);
+  --text-accent-hover: var(--color-accent-2);
+  --interactive-normal: var(--color-base-00);
+  --interactive-hover: var(--color-base-10);
+  --interactive-accent-hsl: var(--color-accent-hsl);
+  --interactive-accent: var(--color-accent-1);
+  --interactive-accent-hover: var(--color-accent-2);
+}

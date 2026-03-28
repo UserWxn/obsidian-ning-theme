@@ -1,0 +1,291 @@
+/* ----- gruvbox theme ----- */
+body {
+  --dark0-hard_x: 29, 32, 33; /* #1d2021 */
+  --dark0-hard: rgb(var(--dark0-hard_x));
+  --dark0_x: 40, 40, 40; /* #282828 */
+  --dark0: rgb(var(--dark0_x));
+  --dark0-soft_x: 50, 48, 47; /* #32302f */
+  --dark0-soft: rgb(var(--dark0-soft_x));
+  --dark1_x: 60, 56, 54; /* #3c3836 */
+  --dark1: rgb(var(--dark1_x));
+  --dark2_x: 80, 73, 69; /* #504945 */
+  --dark2: rgb(var(--dark2_x));
+  --dark3_x: 102, 92, 84; /* #665c54 */
+  --dark3: rgb(var(--dark3_x));
+  --dark4_x: 124, 111, 100; /* #7c6f64 */
+  --dark4: rgb(var(--dark4_x));
+  --gray_x: 146, 131, 116; /* #928374 */
+  --gray: rgb(var(--gray_x));
+
+  --light0-hard_x: 249, 245, 215; /* #f9f5d7 */
+  --light0-hard: rgb(var(--light0-hard_x));
+  --light0_x: 251, 241, 199; /* #fbf1c7 */
+  --light0: rgb(var(--light0_x));
+  --light0-soft_x: 242, 229, 188; /* #f2e5bc */
+  --light0-soft: rgb(var(--light0-soft_x));
+  --light1_x: 235, 219, 178; /* #ebdbb2 */
+  --light1: rgb(var(--light1_x));
+  --light2_x: 213, 196, 161; /* #d5c4a1 */
+  --light2: rgb(var(--light2_x));
+  --light3_x: 189, 174, 147; /* #bdae93 */
+  --light3: rgb(var(--light3_x));
+  --light4_x: 168, 153, 132; /* #a89984 */
+  --light4: rgb(var(--light4_x));
+
+  --bright-red_x: 251, 73, 52; /* #fb4934 */
+  --bright-red: rgb(var(--bright-red_x));
+  --bright-green_x: 184, 187, 38; /* #b8bb26 */
+  --bright-green: rgb(var(--bright-green_x));
+  --bright-yellow_x: 250, 189, 47; /* #fabd2f */
+  --bright-yellow: rgb(var(--bright-yellow_x));
+  --bright-blue_x: 131, 165, 152; /* #83a598 */
+  --bright-blue: rgb(var(--bright-blue_x));
+  --bright-purple_x: 211, 134, 155; /* #d3869b */
+  --bright-purple: rgb(var(--bright-purple_x));
+  --bright-aqua_x: 142, 192, 124; /* #8ec07c */
+  --bright-aqua: rgb(var(--bright-aqua_x));
+  --bright-orange_x: 254, 128, 25; /* #fe8019 */
+  --bright-orange: rgb(var(--bright-orange_x));
+
+  --neutral-red_x: 204, 36, 29; /* #cc241d */
+  --neutral-red: rgb(var(--neutral-red_x));
+  --neutral-green_x: 152, 151, 26; /* #98971a */
+  --neutral-green: rgb(var(--neutral-green_x));
+  --neutral-yellow_x: 215, 153, 33; /* #d79921 */
+  --neutral-yellow: rgb(var(--neutral-yellow_x));
+  --neutral-blue_x: 69, 133, 136; /* #458588 */
+  --neutral-blue: rgb(var(--neutral-blue_x));
+  --neutral-purple_x: 177, 98, 134; /* #b16286 */
+  --neutral-purple: rgb(var(--neutral-purple_x));
+  --neutral-aqua_x: 104, 157, 106; /* #689d6a */
+  --neutral-aqua: rgb(var(--neutral-aqua_x));
+  --neutral-orange_x: 214, 93, 14; /* #d65d0e */
+  --neutral-orange: rgb(var(--neutral-orange_x));
+
+  --faded-red_x: 157, 0, 6; /* #9d0006 */
+  --faded-red: rgb(var(--faded-red_x));
+  --faded-green_x: 121, 116, 14; /* #79740e */
+  --faded-green: rgb(var(--faded-green_x));
+  --faded-yellow_x: 181, 118, 20; /* #b57614 */
+  --faded-yellow: rgb(var(--faded-yellow_x));
+  --faded-blue_x: 7, 102, 120; /* #076678 */
+  --faded-blue: rgb(var(--faded-blue_x));
+  --faded-purple_x: 143, 63, 113; /* #8f3f71 */
+  --faded-purple: rgb(var(--faded-purple_x));
+  --faded-aqua_x: 66, 123, 88; /* #427b58 */
+  --faded-aqua: rgb(var(--faded-aqua_x));
+  --faded-orange_x: 175, 58, 3; /* #af3a03 */
+  --faded-orange: rgb(var(--faded-orange_x));
+
+  --pale-red_x: 215, 95, 95; /* #d75f5f */
+  --pale-red: rgb(var(--pale-red_x));
+  --pale-green_x: 175, 175, 0; /* #afaf00 */
+  --pale-green: rgb(var(--pale-green_x));
+  --pale-yellow_x: 255, 175, 0; /* #ffaf00 */
+  --pale-yellow: rgb(var(--pale-yellow_x));
+  --pale-blue_x: 131, 173, 173; /* #83adad */
+  --pale-blue: rgb(var(--pale-blue_x));
+  --pale-purple_x: 212, 133, 173; /* #d485ad */
+  --pale-purple: rgb(var(--pale-purple_x));
+  --pale-aqua_x: 85, 173, 85; /* #85ad85 */
+  --pale-aqua: rgb(var(--pale-aqua_x));
+  --pale-orange_x: 255, 127, 0; /* #ff8700 */
+  --pale-orange: rgb(var(--pale-orange_x));
+  --pale-brown_x: 214, 93, 14; /* #d65d0e */
+  --pale-brown: rgb(var(--pale-brown_x));
+}
+
+.theme-dark {
+  color-scheme: dark;
+
+  --h1-color: var(--bright-red);
+  --h2-color: var(--bright-yellow);
+  --h3-color: var(--bright-green);
+  --h4-color: var(--bright-aqua);
+  --h5-color: var(--bright-blue);
+  --h6-color: var(--bright-purple);
+
+  --accent-h: 23.53 !important;
+  --accent-s: 76.12% !important;
+  --accent-l: 60.59% !important;
+
+  --color-red-rgb: var(--bright-red_x);
+  --color-red: var(--bright-red);
+  --color-purple-rgb: var(--neutral-purple_x);
+  --color-purple: var(--neutral-purple);
+  --color-green-rgb: var(--neutral-green_x);
+  --color-green: var(--neutral-green);
+  --color-cyan-rgb: var(--neutral-blue_x);
+  --color-cyan: var(--neutral-blue);
+  --color-blue-rgb: var(--faded-blue_x);
+  --color-blue: var(--faded-blue);
+  --color-yellow-rgb: var(--neutral-yellow_x);
+  --color-yellow: var(--neutral-yellow);
+  --color-orange-rgb: var(--neutral-orange_x);
+  --color-orange: var(--neutral-orange);
+  --color-pink-rgb: var(--bright-purple_x);
+  --color-pink: var(--bright-purple);
+
+  --color-base-00: #1d2021;
+  --color-base-05: #282828;
+  --color-base-10: #32302f;
+  --color-base-20: #3c3836;
+  --color-base-25: #504945;
+  --color-base-30: #665c54;
+  --color-base-35: #7c6f64;
+  --color-base-40: #928374;
+  --color-base-50: #a89984;
+  --color-base-60: #bdae93;
+  --color-base-70: #d5c4a1;
+  --color-base-100: #ebdbb2;
+
+  --background-primary: #282828;
+  --background-primary-alt: var(--dark0-soft);
+  --background-secondary: #1d2021;
+
+  --background-secondary-alt: var(--dark0-soft);
+  --background-modifier-border: var(--dark2);
+
+  // --text-normal: #d5c4a1;
+  // --text-normal: #ebdbb2;
+  --text-normal: #ddc7a1;
+  --text-muted: var(--color-base-60);
+  --text-faint: var(--color-base-50);
+
+  // --text-normal: #c5baa9;
+  // --text-muted: #beb19f;
+  // --text-faint: #a89984;
+
+  --bold-color: var(--bright-purple);
+
+  --inline-code-color: var(--bright-orange);
+  --code-background: var(--dark1);
+
+  --link-color: var(--bright-yellow);
+  --link-color-hover: var(--bright-yellow);
+  --link-external-color: #db8e88;
+  --link-external-color-hover: #db8e88;
+
+  --text-highlight-fg: var(--color-base-00);
+  --text-highlight-bg: var(--color-yellow);
+
+  --nav-item-color-active: #fbf1c7;
+}
+
+// .wxn{
+//   ; Selenized-Light
+// ;   Color Theme for PureBasic IDE
+// ;
+// ;   Theme by Ethan Schoonover
+// ;     http://ethanschoonover.com/solarized/
+// ;   Adapted for PB by kenmo-pb
+
+// [Sections]
+// IncludeColors = 1
+
+// [Colors]
+// ASMKeywordColor = RGB(135, 98, 198)
+// ASMKeywordColor_Used = 1
+// BackgroundColor = RGB(251, 243, 219)
+// BackgroundColor_Used = 1
+// BasicKeywordColor = RGB(173, 137, 0)
+// BasicKeywordColor_Used = 1
+// CommentColor = RGB(144, 153, 149)
+// CommentColor_Used = 1
+// ConstantColor = RGB(194, 93, 30)
+// ConstantColor_Used = 1
+// LabelColor = RGB(202, 72, 152)
+// LabelColor_Used = 1
+// NormalTextColor = RGB(83, 103, 109)
+// NormalTextColor_Used = 1
+// NumberColor = RGB(0, 156, 143)
+// NumberColor_Used = 1
+// OperatorColor = RGB(83, 103, 109)
+// OperatorColor_Used = 1
+// PointerColor = RGB(58, 77, 83)
+// PointerColor_Used = 1
+// PureKeywordColor = RGB(0, 114, 212)
+// PureKeywordColor_Used = 1
+// SeparatorColor = RGB(83, 103, 109)
+// SeparatorColor_Used = 1
+// StringColor = RGB(0, 156, 143)
+// StringColor_Used = 1
+// StructureColor = RGB(83, 103, 109)
+// StructureColor_Used = 1
+// LineNumberColor = RGB(83, 103, 109)
+// LineNumberColor_Used = 1
+// LineNumberBackColor = RGB(236, 227, 204)
+// LineNumberBackColor_Used = 1
+// MarkerColor = RGB(83, 103, 109)
+// MarkerColor_Used = 1
+// CurrentLineColor = RGB(236, 227, 204)
+// CurrentLineColor_Used = 1
+// SelectionColor = RGB(58, 77, 83)
+// SelectionColor_Used = 1
+// SelectionFrontColor = RGB(144, 153, 149)
+// SelectionFrontColor_Used = 1
+// CursorColor = RGB(83, 103, 109)
+// CursorColor_Used = 1
+// Debugger_LineColor = RGB(236, 227, 204)
+// Debugger_LineColor_Used = 1
+// Debugger_LineSymbolColor = RGB(202, 72, 152)
+// Debugger_LineSymbolColor_Used = 1
+// Debugger_ErrorColor = RGB(236, 227, 204)
+// Debugger_ErrorColor_Used = 1
+// Debugger_ErrorSymbolColor = RGB(210, 33, 45)
+// Debugger_ErrorSymbolColor_Used = 1
+// Debugger_BreakPointColor = RGB(236, 227, 204)
+// Debugger_BreakPointColor_Used = 1
+// Debugger_BreakpoinSymbolColor = RGB(0, 114, 212)
+// Debugger_BreakpoinSymbolColor_Used = 1
+// DisabledBackColor = RGB(251, 243, 219)
+// DisabledBackColor_Used = 1
+// GoodBraceColor = RGB(58, 77, 83)
+// GoodBraceColor_Used = 1
+// BadBraceColor = RGB(210, 33, 45)
+// BadBraceColor_Used = 1
+// ProcedureBackColor = RGB(251, 243, 219)
+// ProcedureBackColor_Used = 1
+// CustomKeywordColor = RGB(83, 103, 109)
+// CustomKeywordColor_Used = 1
+// Debugger_WarningColor = RGB(236, 227, 204)
+// Debugger_WarningColor_Used = 1
+// Debugger_WarningSymbolColor = RGB(173, 137, 0)
+// Debugger_WarningSymbolColor_Used = 1
+// IndentColor = RGB(210, 33, 45)
+// IndentColor_Used = 1
+// ModuleColor = RGB(194, 93, 30)
+// ModuleColor_Used = 1
+// SelectionRepeatColor = RGB(236, 227, 204)
+// SelectionRepeatColor_Used = 1
+// PlainBackground = RGB(251, 243, 219)
+// PlainBackground_Used = 1
+
+// ToolsPanel_FrontColor = RGB(83, 103, 109)
+// ToolsPanel_BackColor = RGB(251, 243, 219)
+
+// set $bg #fbf3db
+// set $black #ece3cc
+// set $br_black #d5cdb6
+// set $white #909995
+// set $fg #53676d
+// set $br_white #3a4d53
+
+// set $red #d2212d
+// set $green #489100
+// set $yellow #ad8900
+// set $blue #0072d4
+// set $magenta #ca4898
+// set $cyan #009c8f
+// set $orange #c25d1e
+// set $violet #8762c6
+
+// set $br_red #cc1729
+// set $br_green #428b00
+// set $br_yellow #a78300
+// set $br_blue #006dce
+// set $br_magenta #c44392
+// set $br_cyan #00978a
+// set $br_orange #bc5819
+// set $br_violet #825dc0
+// }

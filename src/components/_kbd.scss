@@ -1,0 +1,122 @@
+/* https://discord.com/channels/686053708261228577/702656734631821413/1324464778256580720 */
+
+// body {
+//   --kbd-body-color: color-mix(
+//     in srgb,
+//     var(--color-base-10),
+//     rgb(var(--mono-rgb-0)) 50%
+//   );
+//   --kbd-border-color: var(--color-base-40);
+//   --kbd-shade-color: var(--color-base-20);
+//   --kbd-key-bg: linear-gradient(
+//     120deg,
+//     var(--color-base-10) 0%,
+//     var(--color-base-10) 30%,
+//     var(--color-base-40) 200%
+//   );
+
+//   &.theme-light {
+//     --kbd-body-color: var(--color-base-50);
+//     --kbd-border-color: var(--color-base-00);
+//     --kbd-shade-color: var(--color-base-30);
+//     --kbd-key-bg: linear-gradient(
+//       310deg,
+//       var(--color-base-10) 0%,
+//       var(--color-base-10) 30%,
+//       var(--color-base-30) 130%
+//     );
+//   }
+
+//   kbd {
+//     background: var(--kbd-key-bg);
+//     color: var(--text-normal);
+//     display: inline-block;
+//     transform: translate(0, -2px);
+//     min-width: 1.5em;
+//     min-height: 1.5em;
+//     text-align: center;
+//     padding: 0 0.25em;
+//     // font-size: 0.8rem;
+
+//     box-shadow: inset 0px 0px 0 0.5px var(--kbd-border-color),
+//       //border
+//       -3px -1px 0 0px var(--kbd-shade-color),
+//       //white shade
+//       0px -1px 0 0px var(--kbd-shade-color),
+//       //white shade
+//       -2px 0 0 1px var(--kbd-body-color),
+//       2px 0 0 1px var(--kbd-body-color), -2px 5px 0 1px var(--kbd-body-color),
+//       2px 5px 0 1px var(--kbd-body-color);
+
+//     margin: 0 3px 4px;
+//   }
+// }
+
+
+
+/* based on: https://dylanatsmith.com/wrote/styling-the-kbd-element */
+
+body.theme-dark {
+  --kbd-color-background: var(--color-base-50);
+  --kbd-color-border: var(--color-base-30);
+  --kbd-color-text: var(--color-base-10);
+}
+
+body.theme-light {
+  --kbd-color-background: var(--color-base-10);
+  --kbd-color-border: var(--color-base-40);
+  --kbd-color-text: var(--text-normal);
+}
+
+.suggestion-item.mod-complex .suggestion-hotkey,
+kbd {
+  --kbd-font: var(--font-text);
+
+  display: inline-block;
+  background-color: var(--kbd-color-background);
+  color: var(--kbd-color-text);
+
+  /* Round off the corners like physical keys have */
+  border-radius: var(--radius-s);
+
+  /* Add a simple border */
+  border: 1px solid var(--kbd-color-border);
+
+  /* A sharp shadow (with no blur) really gives */
+  /* the old school keyboard look */
+  box-shadow: 0 2px 0 1px var(--kbd-color-border);
+
+  /* Remove the text cursor — totally optional */
+  /* but I wanted it for my hover effect */
+  cursor: default;
+
+  /* By default, browsers style <kbd> with a monospace typeface */
+  font-family: var(--kbd-font);
+  font-size: var(--font-smaller);
+
+  /* Remove any extra space so I can accurately tweak the padding */
+  line-height: 1;
+
+  /* Make narrow numbers and letters look less odd */
+  min-width: calc(1em + 10px);
+
+  /* Keep the characters centred when narrower than the `max-width` */
+  text-align: center;
+
+  /* Seemed to look more key-like with more horizontal padding 🤷 */
+  padding: 2px 5px;
+
+  /* These two lines pull the whole element up now that they’re */
+  /* bottom-heavy due to the `box-shadow`. This looks better */
+  /* against the cap height of regular paragraph text. */
+  position: relative;
+  top: -1px;
+
+  /* This is my favourite part of the whole thing. The key gets */
+  /* “pushed” down and the shadow gets reduced so it looks like */
+  /* it might when typing on a physical keyboard. */
+  &:hover {
+    box-shadow: 0 1px 0 0.5px var(--kbd-color-border);
+    top: 1px;
+  }
+}

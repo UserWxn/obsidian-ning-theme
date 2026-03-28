@@ -1,0 +1,158 @@
+body {
+  --hsl-base05: 192deg 100% 5%;
+  --hsl-base04: 192deg 100% 8%;
+  --hsl-base03: 192deg 100% 11%;
+  --hsl-base02: 192deg 81% 14%;
+  --hsl-base01: 194deg 14% 40%;
+  --hsl-base00: 196deg 13% 45%;
+  --hsl-base0: 186deg 8% 65%;
+  --hsl-base1: 180deg 7% 70%;
+  --hsl-base2: 46deg 42% 88%;
+  --hsl-base3: 44deg 87% 94%;
+  --hsl-base4: 0deg 0% 100%;
+
+  --hsl-yellow: 45deg 100% 35%;
+  --hsl-yellow-100: 47deg 100% 80%;
+  --hsl-yellow-300: 45deg 100% 50%;
+  --hsl-yellow-500: 45deg 100% 35%;
+  --hsl-yellow-700: 45deg 100% 20%;
+  --hsl-yellow-900: 46deg 100% 10%;
+
+  --hsl-orange: 18deg 80% 44%;
+  --hsl-orange-100: 17deg 100% 70%;
+  --hsl-orange-300: 17deg 94% 51%;
+  --hsl-orange-500: 18deg 80% 44%;
+  --hsl-orange-700: 18deg 81% 35%;
+  --hsl-orange-900: 18deg 80% 20%;
+
+  --hsl-red: 1deg 71% 52%;
+  --hsl-red-100: 1deg 100% 80%;
+  --hsl-red-300: 1deg 90% 64%;
+  --hsl-red-500: 1deg 71% 52%;
+  --hsl-red-700: 1deg 71% 42%;
+  --hsl-red-900: 1deg 71% 20%;
+
+  --hsl-magenta: 331deg 64% 52%;
+  --hsl-magenta-100: 331deg 100% 73%;
+  --hsl-magenta-300: 331deg 86% 64%;
+  --hsl-magenta-500: 331deg 64% 52%;
+  --hsl-magenta-700: 331deg 64% 42%;
+  --hsl-magenta-900: 331deg 65% 20%;
+
+  --hsl-violet: 237deg 43% 60%;
+  --hsl-violet-100: 236deg 100% 90%;
+  --hsl-violet-300: 237deg 69% 77%;
+  --hsl-violet-500: 237deg 43% 60%;
+  --hsl-violet-700: 237deg 43% 50%;
+  --hsl-violet-900: 237deg 42% 25%;
+
+  --hsl-blue: 205deg 69% 49%;
+  --hsl-blue-100: 205deg 100% 83%;
+  --hsl-blue-300: 205deg 90% 62%;
+  --hsl-blue-500: 205deg 69% 49%;
+  --hsl-blue-700: 205deg 70% 35%;
+  --hsl-blue-900: 205deg 69% 20%;
+
+  --hsl-cyan: 175deg 59% 40%;
+  --hsl-cyan-100: 176deg 100% 86%;
+  --hsl-cyan-300: 175deg 85% 55%;
+  --hsl-cyan-500: 175deg 59% 40%;
+  --hsl-cyan-700: 182deg 59% 25%;
+  --hsl-cyan-900: 183deg 58% 15%;
+
+  --hsl-green: 68deg 100% 30%;
+  --hsl-green-100: 90deg 100% 84%;
+  --hsl-green-300: 76deg 100% 49%;
+  --hsl-green-500: 68deg 100% 30%;
+  --hsl-green-700: 68deg 100% 20%;
+  --hsl-green-900: 68deg 100% 10%;
+}
+
+.theme-dark {
+  --h1-color: var(--color-orange);
+  --h2-color: var(--color-yellow);
+  --h3-color: var(--color-green);
+  --h4-color: var(--color-cyan);
+  --h5-color: var(--color-blue);
+  --h6-color: var(--color-purple);
+
+  color-scheme: dark;
+
+  --hsl-bg: var(--hsl-base05);
+  --hsl-bg-muted-highlight: var(--hsl-base04);
+  --hsl-bg-highlight: var(--hsl-base03);
+  --hsl-fg: 186deg 8% 55%;
+
+  // --accent-h: 175;
+  // --accent-s: 28%;
+  // --accent-l: 50%;
+
+  --accent-h: 175.46;
+  --accent-s: 58.62%;
+  --accent-l: 39.8%;
+
+  --color-orange: hsl(var(--hsl-orange-500));
+  --color-pink: hsl(var(--hsl-magenta-500));
+  --color-blue: hsl(var(--hsl-blue-500));
+  --color-cyan: hsl(var(--hsl-cyan-500));
+  --color-green: hsl(var(--hsl-green-500));
+  --color-red: hsl(var(--hsl-red-500));
+  --color-yellow: hsl(var(--hsl-yellow-500));
+  --color-purple: hsl(var(--hsl-violet-500));
+
+  --color-red-rgb: 220, 49, 46;
+  --color-orange-rgb: 202, 76, 22;
+  --color-yellow-rgb: 179, 134, 0;
+  --color-green-rgb: 133, 153, 0;
+  --color-cyan-rgb: 42, 162, 152;
+  --color-blue-rgb: 39, 139, 211;
+  --color-purple-rgb: 109, 114, 197;
+  --color-pink-rgb: 211, 54, 130;
+
+  --color-base-00: hsl(var(--hsl-base05));
+  --color-base-05: hsl(var(--hsl-base04));
+  --color-base-10: hsl(var(--hsl-base03));
+  --color-base-20: hsl(var(--hsl-base02));
+  --color-base-25: hsl(var(--hsl-base02));
+  --color-base-30: #3a4e54;
+  --color-base-35: hsl(var(--hsl-base01));
+  --color-base-40: hsl(var(--hsl-base00));
+  --color-base-50: #536668;
+  --color-base-60: #586b6d;
+  --color-base-70: #657c7e;
+  --color-base-100: #8a9a9c;
+
+  --background-primary: hsl(var(--hsl-base03));
+  // --background-primary: #002b36;
+  --background-secondary: hsl(var(--hsl-base04));
+
+  // --background-primary-alt: #08404f;
+  --background-secondary-alt: #023643;
+
+  --text-normal: hsl(var(--hsl-fg));
+  --text-muted: var(--color-base-70);
+  --text-faint: hsl(var(--hsl-base3) / 30%);
+
+  // --text-normal: #a4b5b6;
+  // --text-muted: hsl(var(--hsl-fg));
+  // --text-faint: var(--color-base-70);
+
+  // --tab-stacked-shadow: 0px 1px 2px rgba(0, 0, 0, 0.228),
+  //   0px 3.4px 6.7px rgba(0, 0, 0, 0.242), 0px 15px 30px rgba(0, 0, 0, 0.27);
+
+  --tab-stacked-shadow:
+    0px 1px 2px rgba(0, 0, 0, 0.02), 0px 3.4px 6.7px rgba(0, 0, 0, 0.03),
+    0px 15px 30px rgba(0, 0, 0, 0.04);
+
+  --link-color: var(--color-purple);
+  --link-color-hover: var(--link-color);
+  --link-external-color: var(--color-blue);
+  --link-external-color-hover: var(--link-external-color);
+
+  --code-background: hsl(var(--hsl-base05) / 22%);
+
+  --text-highlight-bg: hsl(var(--hsl-magenta) / 50%);
+
+  --background-modifier-border: hsl(var(--hsl-base01) / 50%);
+}
+

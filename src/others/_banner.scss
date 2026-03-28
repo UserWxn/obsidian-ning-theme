@@ -1,0 +1,57 @@
+body {
+  --banner-height: 250px;
+}
+
+.is-live-preview .image-embed[alt*="banner"],
+.markdown-reading-view [alt*="banner"] > img {
+  width: 100%;
+  height: var(--banner-height);
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+.is-live-preview .image-wrapper:has(img[alt*="banner"]) {
+  width: 100%;
+}
+
+.is-live-preview img[alt*="banner"],
+.markdown-reading-view [alt*="banner"] > img {
+  object-fit: cover;
+
+  &:is([alt*="H5"]) {
+    object-position: 50% 0%;
+  }
+  &:is([alt*="H4"]) {
+    object-position: 50% 10%;
+  }
+  &:is([alt*="H3"]) {
+    object-position: 50% 20%;
+  }
+  &:is([alt*="H2"]) {
+    object-position: 50% 30%;
+  }
+  &:is([alt*="H1"]) {
+    object-position: 50% 40%;
+  }
+  &:is([alt*="L1"]) {
+    object-position: 50% 60%;
+  }
+  &:is([alt*="L2"]) {
+    object-position: 50% 70%;
+  }
+  &:is([alt*="L3"]) {
+    object-position: 50% 80%;
+  }
+  &:is([alt*="L4"]) {
+    object-position: 50% 90%;
+  }
+  &:is([alt*="L5"]) {
+    object-position: 50% 100%;
+  }
+}
+
+.cm-sizer:has(img[alt*="banner"]),
+.markdown-preview-sizer:has([alt*="banner"] > img) {
+  padding-top: var(--banner-height);
+}

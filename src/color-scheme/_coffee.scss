@@ -1,0 +1,76 @@
+.theme-dark {
+  --accent-h: 22.26;
+  --accent-s: 35.23%;
+  --accent-l: 48%;
+  --background-primary: #211c1b;
+  --background-secondary: hsl(15, 11%, 14%);
+  --text-normal: hsl(27, 20%, 55%);
+  --text-muted: #9e836d;
+  --link-color: hsl(158, 34%, 45%);
+  --tag-color: #dd745b;
+  --bold-color: #ccae93;
+  --color-base-00: hsl(13, 18%, 10%);
+  --color-base-05: hsl(10, 10%, 12%);
+  --color-base-10: hsl(13, 11%, 13%);
+  --color-base-20: hsl(15, 11%, 14%);
+  --color-base-25: hsl(9, 9%, 15%);
+  --color-base-30: hsl(9, 9%, 17%);
+  --color-base-35: hsl(8, 8%, 20%);
+  --color-base-40: hsl(17, 12%, 23%);
+  --color-base-50: hsl(24, 11%, 34%);
+  --color-base-60: hsl(24, 11%, 40%);
+  --color-base-70: #9e836d;
+  --color-base-100: hsl(27, 20%, 55%);
+
+    --color-red: #d35c43; /* 焦糖红 */
+    --color-orange: #e29041; /* 蜂蜜橙 */
+    --color-yellow: #d9af5a; /* 金棕黄 */
+    --color-green: #90a955; /* 橄榄绿 */
+    --color-cyan: #6eaa96; /* 薄荷青 */
+    --color-blue: #699bcd; /* 柔和灰蓝 */
+    --color-purple: #a58cc8; /* 摩卡紫 */
+    --color-pink: #c86e82; /* 玫瑰拿铁粉 */
+
+  //   --color-red-rgb: 211, 92, 67; /* 焦糖红 */
+  //   --color-orange-rgb: 226, 144, 65; /* 蜂蜜橙 */
+  //   --color-yellow-rgb: 217, 175, 90; /* 金棕黄 */
+  //   --color-green-rgb: 144, 169, 85; /* 橄榄绿 */
+  //   --color-cyan-rgb: 110, 170, 150; /* 浅薄荷青 */
+  //   --color-blue-rgb: 105, 155, 205; /* 柔和灰蓝 */
+  //   --color-purple-rgb: 165, 140, 200; /* 摩卡紫 */
+  //   --color-pink-rgb: 200, 110, 130; /* 玫瑰拿铁粉 */
+
+  --color-red-rgb: 204, 36, 29;
+  --color-orange-rgb: 214, 93, 14;
+  --color-yellow-rgb: 215, 153, 33;
+  --color-green-rgb: 152, 151, 26;
+  --color-cyan-rgb: 104, 157, 106;
+  --color-blue-rgb: 69, 133, 136;
+  --color-purple-rgb: 177, 98, 134;
+  --color-pink-rgb: 180, 104, 121;
+
+  // --code-bg: #241e1b;
+  // --code-normal: #998b82;
+  // --code-comment: #665851;
+  // --code-function: #c38d59;
+  // --code-important: #b97656;
+  // --code-keyword: #bf664e;
+  // --code-property: #c9a852;
+  // --code-punctuation: #b09f90;
+  // --code-string: #83a98a;
+  // --code-tag: #bf664e;
+  // --code-value: #9870e0;
+
+  --code-bg: #1b1614;
+  --code-normal: #7f726a;
+  --code-comment: #554842;
+  --code-function: #a6754a;
+  --code-important: #9b5f45;
+  --code-keyword: #9c523f;
+  --code-property: #a98944;
+  --code-punctuation: #968678;
+  --code-string: #6e9074;
+  --code-tag: #9c523f;
+  --code-value: #7f5ac1;
+  --code-operator: #968678;
+}

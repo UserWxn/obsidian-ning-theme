@@ -1,0 +1,83 @@
+/* @settings
+
+name: ✏️ Ning Editor
+id: ning-editor
+settings:
+    -   id: table-setting
+        title: Table
+        type: heading
+        level: 2
+        collapsed: true
+    - 
+        id: table-style
+        title: Table Style
+        title.zh: 表格样式
+        description: Choose prefered table style
+        description.zh: 选择表格的样式
+        type: class-select
+        allowEmpty: false
+        default: composer--DefaultTableStyle
+        options:
+          - label: Default 默认
+            value: composer--DefaultTableStyle
+          - label: Obsidian
+            value: composer--ObsidianTableStyle
+          - label: Borderless 无边框
+            value: composer--BorderlessTableStyle
+          - label: Three Line(Academic) 三线表(学术)
+            value: composer--AcademicTableStyle
+    - id: composer--HideStripedTableBackground
+      title: Hide Striped Background
+      title.zh: 关闭斑马纹背景
+      type: class-toggle
+
+       -
+        id: heading-options
+        title: Heading
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: heading-style
+        title: 标题级别
+        type: class-select
+        allowEmpty: false
+        default: heading-indicator-auto
+        options:
+            -
+                label: Disable
+                value: .heading-indicator-disable
+            -
+                label: Auto Hide
+                value: heading-indicator-auto
+            -
+                label: Fixed
+                value: heading-indicator-fixed
+
+
+
+    -
+        id: callout-options
+        title: Callouts
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: callout-style
+        title: Callout Style
+        type: class-select
+        allowEmpty: false
+        default: callout-normal
+        options:
+            -
+                label: Default
+                value: callout-normal
+            -
+                label: Bordered
+                value: callout-bordered
+            -
+                label: Card
+                value: callout-floating 
+
+
+*/
