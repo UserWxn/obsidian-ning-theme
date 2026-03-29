@@ -1,3 +1,8 @@
+body {
+  --inline-code-padding-vertical: 0.1em;
+  --inline-code-padding-horizontal: 0.2em;
+}
+
 /* 阅读模式 */
 .view-content
   .markdown-reading-view

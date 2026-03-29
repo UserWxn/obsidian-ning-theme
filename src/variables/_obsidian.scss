@@ -43,6 +43,9 @@ body {
   --callout-radius: 6px;
   --prompt-width: calc(var(--file-line-width) - 50px);
 
+  // code
+  --code-radius: 8px;
+
   // tag
   --tag-radius: 15px;
   --tag-size: 0.8em;
