@@ -1,5 +1,5 @@
 body.layout-border:not(.is-mobile) {
-  --tab-radius: var(--radius-l);
+  --tab-radius: var(--layout-radius);
 
   .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
   .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
@@ -18,6 +18,16 @@ body.layout-border:not(.is-mobile) {
     }
   }
 
+  &:not(.show-ribbon:not(.hover-ribbon)) {
+    .mod-sidedock {
+      &.mod-left-split {
+        .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
   // Side panels
   .mod-sidedock {
     .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
@@ -29,15 +39,15 @@ body.layout-border:not(.is-mobile) {
     }
 
     &.mod-left-split {
-      .workspace-tabs:not(.mod-top) .workspace-tab-header-container,
+      // .workspace-tabs:not(.mod-top) .workspace-tab-header-container,
       .workspace-tab-container {
         margin-left: 8px;
       }
       .workspace-tabs.mod-top .workspace-tab-container {
-        border-top-left-radius: var(--radius-l);
+        border-top-left-radius: var(--layout-radius);
       }
       .workspace-tabs:last-child .workspace-tab-container {
-        border-bottom-left-radius: var(--radius-l);
+        border-bottom-left-radius: var(--layout-radius);
       }
     }
     &.mod-right-split {
@@ -46,10 +56,10 @@ body.layout-border:not(.is-mobile) {
         margin-right: 8px;
       }
       .workspace-tabs.mod-top .workspace-tab-container {
-        border-top-right-radius: var(--radius-l);
+        border-top-right-radius: var(--layout-radius);
       }
       .workspace-tabs:last-child .workspace-tab-container {
-        border-bottom-right-radius: var(--radius-l);
+        border-bottom-right-radius: var(--layout-radius);
       }
     }
   }
@@ -61,7 +71,7 @@ body.layout-border:not(.is-mobile) {
       //   margin-bottom: 0;
       // }
       .workspace-tab-container {
-        border-top-left-radius: var(--radius-l);
+        border-top-left-radius: var(--layout-radius);
       }
     }
 
@@ -88,15 +98,15 @@ body.layout-border:not(.is-mobile) {
 }
 
 // Mobile
-body.layout-border.is-tablet {
-  .workspace-drawer.is-pinned.mod-left {
-    margin-right: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  .workspace-drawer.is-pinned.mod-right {
-    margin-left: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-}
+// body.layout-border.is-tablet {
+//   .workspace-drawer.is-pinned.mod-left {
+//     margin-right: 0;
+//     border-top-right-radius: 0;
+//     border-bottom-right-radius: 0;
+//   }
+//   .workspace-drawer.is-pinned.mod-right {
+//     margin-left: 0;
+//     border-top-left-radius: 0;
+//     border-bottom-left-radius: 0;
+//   }
+// }

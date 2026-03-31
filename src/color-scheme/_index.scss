@@ -6,9 +6,9 @@
 // @use "./awesome-dark";
 // @use "./discordian";
 // @use "./night-owl";
-@use "./primary";
-// @use "./love";
-@use "./linux";
+// @use "./primary";
+@use "./love";
+// @use "./linux";
 // @use "./nord";
 // @use "./solarized";
 // @use "./rose-pine";
@@ -18,7 +18,7 @@
 // @use "./night-owl";
 // @use "./winter";
 // @use "./blue-topaz";
-
+// @use "./text";
 body {
   --color-gray: rgb(var(--callout-quote));
 
