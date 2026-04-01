@@ -1,13 +1,9 @@
-.theme-light {
+.theme-light.theme-love-light {
   color-scheme: light;
 
   --accent-h: 80;
   --accent-s: 45%;
   --accent-l: 45%;
-
-  // --h1-color: RGB(194, 93, 30);
-  // --h2-color: #489100;
-  // --h3-color: RGB(173, 137, 0);
 
   --color-l-gray-10: hsla(36, 38%, 98%, 1);
   --color-l-gray-20: hsla(35, 36%, 96%, 1);
@@ -43,7 +39,6 @@
   --background-secondary-alt: #e6dfd6;
   --background-modifier-border: var(--color-l-gray-60);
   --background-modifier-hover: rgba(166, 124, 109, 0.15);
-  // --background-modifier-hover: rgba(255, 255, 255, 0.5);
   --background-modifier-active-hover: var(--color-l-gray-60);
 
   --text-normal: #2d2520;
@@ -97,7 +92,7 @@
   --code-value: #a626a4;
 }
 
-.theme-dark {
+.theme-dark.theme-love-dark {
   color-scheme: dark;
 
   --accent-h: 15;

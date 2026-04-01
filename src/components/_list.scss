@@ -35,26 +35,3 @@ body
   height: var(--list-bullet-size);
   background-color: var(--list-marker-color);
 }
-
-body
-  div.el-ul
-  > ul.has-list-bullet
-  > li
-  > ul.has-list-bullet
-  > li
-  > ul.has-list-bullet
-  > li
-  > ul.has-list-bullet
-  > li
-  > span.list-bullet::after,
-.HyperMD-list-line.HyperMD-list-line-4.cm-line
-  span.cm-hmd-list-indent
-  ~ span.cm-formatting
-  .list-bullet::after {
-  --list-bullet-radius: 0;
-  --list-bullet-transform: rotate(45deg);
-  --list-bullet-border: none;
-  width: var(--list-bullet-size);
-  height: var(--list-bullet-size);
-  background-color: var(--list-marker-color);
-}

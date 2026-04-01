@@ -1,24 +1,18 @@
 // @use "./coffee";
 // @use "./flexoki";
 // @use "./LYT";
-// @use "./enrthy";
-// @use "./cof";
 // @use "./awesome-dark";
-// @use "./discordian";
 // @use "./night-owl";
-// @use "./primary";
+@use "./primary";
 @use "./love";
 // @use "./linux";
 // @use "./nord";
 // @use "./solarized";
 // @use "./rose-pine";
-// @use "./gruvboxColor";
+@use "./gruvbox";
 @use "./search";
-// @use "./default";
 // @use "./night-owl";
-// @use "./winter";
-// @use "./blue-topaz";
-// @use "./text";
+
 body {
   --color-gray: rgb(var(--callout-quote));
 

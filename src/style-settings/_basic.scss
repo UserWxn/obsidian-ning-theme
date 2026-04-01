@@ -3,6 +3,35 @@
 name: 📦 Ning 
 id: ning-editor
 settings:
+    -   id: ning-theme-light
+        title: Light Theme
+        description: Select your preferred light mode flavor
+        type: class-select
+        allowEmpty: false
+        default: theme-love-light
+        options:
+        -
+            label: Love
+            value: theme-love-light
+        -
+            label: Primary
+            value: theme-primary-light
+    -   id: ning-theme-dark
+        title: Dark Theme
+        description: Select your preferred dark mode flavor
+        type: class-select
+        allowEmpty: false
+        default: theme-gruvbox-dark
+        options:
+        -
+            label: Love
+            value: theme-love-dark
+        -
+            label: Gruvbox
+            value: theme-gruvbox-dark
+
+
+
     -   id: workspace-setting
         title: Workspace
         type: heading

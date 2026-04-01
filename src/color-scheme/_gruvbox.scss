@@ -1,5 +1,5 @@
 /* ----- gruvbox theme ----- */
-body {
+body.theme-gruvbox-dark {
   --dark0-hard_x: 29, 32, 33; /* #1d2021 */
   --dark0-hard: rgb(var(--dark0-hard_x));
   --dark0_x: 40, 40, 40; /* #282828 */
@@ -95,7 +95,7 @@ body {
   --pale-brown: rgb(var(--pale-brown_x));
 }
 
-.theme-dark {
+.theme-dark.theme-gruvbox-dark {
   color-scheme: dark;
 
   --h1-color: var(--bright-red);
