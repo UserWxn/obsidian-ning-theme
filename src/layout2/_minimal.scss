@@ -13,11 +13,6 @@ body:is(.layout-minimal):not(.is-mobile) {
     background-color: var(--background-secondary);
     box-shadow: 0 calc(-1 * var(--header-height)) var(--background-secondary);
   }
-
-  // Status bar
-  // &.status-bar-full {
-  //   --status-bar-border-width: 1px 0 0 0;
-  // }
 }
 
 body.layout-minimal {

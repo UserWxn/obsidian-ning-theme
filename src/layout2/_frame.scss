@@ -20,6 +20,22 @@ body.layout-frame:not(.is-mobile) {
     overflow: hidden;
   }
 
+  .workspace-ribbon.mod-left .sidebar-toggle-button {
+    position: relative;
+    display: flex;
+    height: var(--header-height);
+    padding: 8px;
+    width: unset;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:not(.mod-macos):not(.tab-top-left-stacked).css-settings-manager
+    .workspace-ribbon.workspace-ribbon.mod-left
+    .sidebar-toggle-button {
+    height: calc(var(--header-height) - 16px);
+  }
+
   // macOs fix
   &.mod-macos .workspace-ribbon.mod-left {
     // --ribbon-width: 74px;
@@ -38,6 +54,12 @@ body.layout-frame:not(.is-mobile) {
     }
   }
 
+  .mod-sidedock {
+    .workspace-sidedock-vault-profile {
+      background-color: var(--background-primary);
+    }
+  }
+
   // Status bar
   & .status-bar {
     right: 8px;
@@ -47,48 +69,48 @@ body.layout-frame:not(.is-mobile) {
   // ----------------------------------------------------------------
 
   // Style Settings: Background contrast fix
-  // &.theme-light.contrast-light-vivid {
-  //   .workspace-ribbon,
-  //   .workspace-split {
-  //     border-color: #424242;
-  //   }
-  //   .mod-root .workspace-tab-header-container::before {
-  //     background-color: var(--background-primary);
-  //   }
-  // }
+  &.theme-light.contrast-light-vivid {
+    .workspace-ribbon,
+    .workspace-split {
+      border-color: #424242;
+    }
+    .mod-root .workspace-tab-header-container::before {
+      background-color: var(--background-primary);
+    }
+  }
 
   // Style Settings: Status bar fix
-  // &.status-bar-full .workspace {
-  //   padding-bottom: 0;
+  &.status-bar-full .workspace {
+    padding-bottom: 0;
 
-  //   .workspace-ribbon,
-  //   .workspace-split {
-  //     margin-bottom: 0;
-  //   }
-  // }
+    .workspace-ribbon,
+    .workspace-split {
+      margin-bottom: 0;
+    }
+  }
 }
 
 // Mobile
-// body.layout-frame.is-tablet {
-//   --mobile-sidebar-background: var(--background-primary);
+body.layout-frame.is-tablet {
+  --mobile-sidebar-background: var(--background-primary);
 
-//   .workspace {
-//     padding: 0 4px;
-//   }
-//   .mod-root,
-//   .workspace-drawer {
-//     padding-top: 0;
-//     margin-top: var(--safe-area-inset-top);
-//     margin-bottom: 8px;
-//     height: auto;
-//     background-color: var(--background-primary);
-//     border-radius: var(--radius-l);
-//     border: var(--border-width) solid var(--background-modifier-border);
-//     overflow: hidden;
-//   }
-//   .workspace-drawer {
-//     margin-inline: 4px;
-//     padding-top: 16px;
-//     padding-bottom: 0;
-//   }
-// }
+  .workspace {
+    padding: 0 4px;
+  }
+  .mod-root,
+  .workspace-drawer {
+    padding-top: 0;
+    margin-top: var(--safe-area-inset-top);
+    margin-bottom: 8px;
+    height: auto;
+    background-color: var(--background-primary);
+    border-radius: var(--radius-l);
+    border: var(--border-width) solid var(--background-modifier-border);
+    overflow: hidden;
+  }
+  .workspace-drawer {
+    margin-inline: 4px;
+    padding-top: 16px;
+    padding-bottom: 0;
+  }
+}

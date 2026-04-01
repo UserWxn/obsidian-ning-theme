@@ -12,39 +12,14 @@ body:not(.is-mobile) {
 body {
   // --tab-outline-color: transparent;
   --divider-color: transparent;
-  // --titlebar-background: transparent;
-  // --titlebar-background-focused: transparent;
   --prompt-border-color: transparent;
 }
 
-// body:is(.layout-cards, .layout-border):not(.is-mobile)
-//   .workspace
-//   .mod-root:has(> .workspace-split)
-//   > .workspace-tab-container {
-//   border-radius: 0;
+// body:not(.is-mobile)
+//   .workspace-split.mod-left-split
+//   .workspace-sidedock-vault-profile {
+//   display: none;
 // }
-
-// body:not(.is-mobile) {
-//   &:is(.layout-minimal) {
-//     --ribbon-background: var(--background-secondary);
-//     --titlebar-background: transparent;
-//     --titlebar-background-focused: transparent;
-//     --ribbon-background-collapsed: var(--background-secondary);
-//   }
-// }
-//   &:is(.layout-frame) {
-//     --ribbon-background: var(--background-primary);
-//     --titlebar-background: var(--background-primary);
-//     --titlebar-background-focused: var(--titlebar-primary);
-//     --ribbon-background-collapsed: var(--background-secondary);
-//   }
-// }
-
-body:not(.is-mobile)
-  .workspace-split.mod-left-split
-  .workspace-sidedock-vault-profile {
-  display: none;
-}
 
 /* ============= 透明  ============== */
 

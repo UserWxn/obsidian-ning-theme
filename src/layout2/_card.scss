@@ -5,13 +5,21 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   --titlebar-background-focused: var(--background-secondary);
 
   // Editor panel
-  &:not(.show-ribbon)
-    .workspace:not(.is-left-sidedock-open)
+  // &:not(.show-ribbon)
+  //   .workspace:not(.is-left-sidedock-open)
+  //   .mod-root
+  //   .workspace-tab-container {
+  //   margin-left: 8px;
+  // }
+  .workspace:is(.is-right-sidedock-open, .is-left-sidedock-open)
     .mod-root
-    .workspace-tab-container {
-    margin-left: 8px;
-  }
-  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+    > .workspace-tabs.mod-top:not(:last-of-type)
+    > .workspace-tab-container,
+  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container,
+  .workspace:not(.is-left-sidedock-open)
+    .mod-root
+    > .workspace-tabs.mod-top:not(:last-of-type)
+    > .workspace-tab-container {
     margin-right: 8px;
   }
   .workspace .mod-root .workspace-tab-container {
@@ -25,14 +33,6 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
     .workspace-tabs .workspace-tab-container {
       background-color: var(--background-primary);
     }
-
-    // .workspace-sidedock-vault-profile {
-    // padding: 12px;
-    // margin: 8px 0px 8px 8px !important;
-    // border-radius: var(--radius-l);
-    // background-color: var(--background-primary);
-    // box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px;
-    // }
   }
 
   // Ribbon
@@ -50,24 +50,6 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
       margin-top: var(--header-height);
     }
   }
-
-  // Stacked nav
-  //   &:not(.stacked-nav-off)
-  //     .mod-sidedock.mod-left-split
-  //     .workspace-tabs.mod-top-left-space {
-  //     .workspace-tab-header-container-inner {
-  //       background-color: var(--background-primary);
-  //       border-radius: var(--radius-s);
-  //       padding-block: 8px;
-  //       margin: 0 8px 8px;
-  //     }
-  //   }
-  //   &.show-ribbon:not(.stacked-nav-off):not(.mod-macos)
-  //     .mod-sidedock.mod-left-split
-  //     .workspace-tabs.mod-top-left-space
-  //     .workspace-tab-header-container-inner {
-  //     margin-top: var(--header-height);
-  //   }
 
   // Status bar
   &:not(.status-bar-full) {
@@ -91,6 +73,14 @@ body.layout-cards:not(.is-mobile) .mod-sidedock {
   .workspace-tabs .workspace-tab-container {
     margin: 0 8px;
     border-radius: var(--layout-radius);
+  }
+
+  .workspace-sidedock-vault-profile {
+    margin: 8px 8px 0px 0px;
+    border-top: none;
+    border-radius: var(--layout-radius);
+    background-color: var(--background-primary);
+    width: auto;
   }
 }
 
