@@ -1,5 +1,6 @@
 // @use "./coffee";
-// @use "./flexoki";
+@use "./blue-topaz";
+@use "./flexoki";
 // @use "./awesome-dark";
 @use "./primary";
 @use "./love";
@@ -7,7 +8,6 @@
 // @use "./nord";
 @use "./solarized";
 @use "./gruvbox";
-@use "./search";
 
 body {
   --color-gray: rgb(var(--callout-quote));

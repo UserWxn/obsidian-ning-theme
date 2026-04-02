@@ -34,7 +34,7 @@
   .block-language-dataview,
   .block-language-dataviewjs,
   .block-language-datacorejsx {
-    --table-border-color: var(--background-modifier-border);
+    --table-border-color: var(--background-modifier-border-hover);
 
     table {
       position: relative;

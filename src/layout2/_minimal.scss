@@ -4,7 +4,7 @@ body:is(.layout-minimal):not(.is-mobile) {
   // Side panels
   .mod-sidedock {
     & > .workspace-leaf-resize-handle {
-      // border-color: var(--background-modifier-border);
+      border: 1px solid var(--background-modifier-border-hover);
       border-color: transparent;
     }
   }

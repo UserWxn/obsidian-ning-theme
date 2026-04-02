@@ -16,6 +16,9 @@ settings:
         -
             label: Primary
             value: theme-primary-light
+        -
+            label: Flexoki
+            value: theme-flexoki-light
     -   id: ning-theme-dark
         title: Dark Theme
         description: Select your preferred dark mode flavor
@@ -32,6 +35,12 @@ settings:
         -
             label: Solarized Osaka
             value: theme-solarized-dark
+        -
+            label: Flexoki
+            value: theme-flexoki-dark
+        -
+            label: Blue Topaz
+            value: theme-bluetopaz-dark
 
 
     -   id: workspace-setting
@@ -44,7 +53,7 @@ settings:
 		title: Layout style
 		type: class-select
 		allowEmpty: false
-		default: layout-minimal
+		default: layout-cupertino
 		options:
 			-
 				label: Minimal

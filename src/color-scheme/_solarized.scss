@@ -120,19 +120,6 @@ body.theme-solarized-dark {
   --color-purple-rgb: 109, 114, 197;
   --color-pink-rgb: 211, 54, 130;
 
-  // --color-base-00: hsl(var(--hsl-base05));
-  // --color-base-05: hsl(var(--hsl-base04));
-  // --color-base-10: hsl(var(--hsl-base03));
-  // --color-base-20: hsl(var(--hsl-base02));
-  // --color-base-25: hsl(var(--hsl-base02));
-  // --color-base-30: #3a4e54;
-  // --color-base-35: hsl(var(--hsl-base01));
-  // --color-base-40: hsl(var(--hsl-base00));
-  // --color-base-50: #536668;
-  // --color-base-60: #586b6d;
-  // --color-base-70: #657c7e;
-  // --color-base-100: #8a9a9c;
-
   --color-base-00: var(--color-d-gray-140);
   --color-base-05: var(--color-d-gray-120);
   --color-base-10: var(--color-d-gray-100);
@@ -156,8 +143,8 @@ body.theme-solarized-dark {
   --background-modifier-border: var(--color-d-gray-90);
   --background-modifier-border-hover: color-mix(
     in srgb,
-    var(--color-d-gray-90) 40%,
-    var(--color-d-gray-100)
+    var(--color-d-gray-80) 80%,
+    var(--color-d-gray-90)
   );
   --background-modifier-border-focus: color-mix(
     in srgb,
