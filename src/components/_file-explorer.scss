@@ -1,85 +1,446 @@
-@use "sass:math";
-@use "sass:list";
-@use "sass:meta";
-@use "sass:string";
+/*────────── Core Plugin: File Explorer ──────────*/
 
-// SETTINGS
-$range: 11;
-$colors: (var(--color-red), var(--color-cyan));
-$shiftColorsAtStart: 1;
-$shiftColorsAtEnd: 1;
-$gradientModels: ("hwb");
+// Vault Title is only available in Obsidian < v1.6
+// keeping this for compatibility until deprecation
+// Vault Title
+.nav-folder.mod-root > .nav-folder-title[data-path="/"] {
+  justify-content: center;
+  background: var(--vault-name-background);
+  padding: var(--size-2-3) var(--size-4-2);
+  border: var(--vault-name-border);
+  border-radius: calc(var(--radius-l) + 1px);
+  margin-bottom: var(--size-4-2);
 
-@function to-string-trailing($number, $length) {
-  $output: "#{$number}";
-  @while string.length($output) < $length {
-    $output: "0#{$output}";
-  }
-  @return $output;
-}
-
-@mixin nav-folder-styling($pathStart, $color) {
-  .tree-item-self[data-path^="#{$pathStart}"] {
-    --nav-collapse-icon-color: color-mix(in srgb, #{$color}, gray 50%);
-
-    & + .tree-item-children {
-      --nav-indentation-guide-color: color-mix(
-        in srgb,
-        #{$color},
-        var(--indentation-guide-color) 75%
-      );
-    }
-
-    :is(.nav-folder > div > .iconize-icon, .nav-folder-title-content) {
-      color: #{$color};
-    }
+  &:hover {
+    color: var(--vault-name-color);
+    background: var(--vault-name-background);
   }
 }
 
-.workspace-leaf-content[data-type="file-explorer"]
-  .nav-files-container
-  > div
-  > .tree-item {
-  // font-family: var(--font-monospace);
-  letter-spacing: -0.4px;
-  word-spacing: -2px;
-  --nav-item-size: 15px;
+.nav-files-container {
+  padding-top: var(--size-2-1);
+}
 
-  @for $i from 0 to ($range) {
-    $phase: calc(
-        ($i + $shiftColorsAtStart) /
-          ($range - 1 + $shiftColorsAtStart + $shiftColorsAtEnd)
-      ) *
-      (list.length($colors) - 1);
+.nav-file-title {
+  transition:
+    padding,
+    transform var(--anim-duration-fast) var(--anim-motion-smooth);
 
-    $colorIndex: math.floor($phase) + 1;
-    $fade: $phase % 1;
-
-    $model: $gradientModels;
-    @if meta.type-of($gradientModels) == "list" and $fade % 1 != 0 {
-      $model: list.nth($gradientModels, $colorIndex);
-    }
-    $color: none;
-    @if $fade % 1 == 0 {
-      $color: list.nth($colors, $colorIndex);
-    } @else {
-      $color: color-mix(
-        in #{$model},
-        #{list.nth($colors, $colorIndex)},
-        #{list.nth($colors, $colorIndex + 1)} #{$fade * 100%}
-      );
-    }
-
-    // $pathTarget: "#{to-string-trailing($i,2)} - ";
-    $pathTarget: "#{to-string-trailing($i * 10,2)}-";
-
-    @include nav-folder-styling($pathTarget, $color);
+  &:active {
+    transform: translateY(2px);
   }
 
-  // @each $folderName, $color in (
-  //     "90" var(--color-red),
-  //     "99" var(--color-base-60),
-  // ) {
-  //     @include nav-folder-styling($folderName,$color)
-  // }
+  &.is-active {
+    padding: var(--nav-file-padding-active);
+    box-shadow: var(--nav-file-shadow-active);
+  }
+}
+
+// File Extension Tag
+.nav-file-tag {
+  color: var(--nav-file-tag-color);
+  background: var(--nav-file-tag-bg);
+  margin-top: 1px;
+
+  .nav-file-title.is-active & {
+    margin-top: 0px;
+  }
+}
+
+/*────────── SS: Colored File Explorer Folders ──────────*/
+
+// Changes variables to Primary variables
+body {
+  --nav-folder-color: var(--nav-item-color);
+  --nav-folder-bg-color: transparent;
+  --nav-folder-bg-color-hover: var(--nav-item-background-hover);
+  --nav-folder-collapse-color: var(--nav-collapse-icon-color);
+}
+
+.nav-folder-children > .nav-folder .nav-folder-title,
+.nav-files-container > div > .nav-folder .nav-folder-title {
+  color: var(--nav-folder-color);
+  background: var(--nav-folder-bg-color);
+
+  &:hover {
+    color: var(--nav-folder-color);
+    background: var(--nav-folder-bg-color-hover);
+  }
+}
+
+.nav-folder .tree-item-icon svg.svg-icon {
+  color: var(--nav-folder-collapse-color);
+}
+
+// Toggle to Color Collapse Icons
+body.colorful-folders_collapse-indicator {
+  .nav-folder-children > .nav-folder,
+  .nav-files-container > div > .nav-folder {
+    &:nth-child(7n + 2) {
+      --nav-folder-collapse-color: var(--nav-folder-1-collapse-color);
+    }
+
+    &:nth-child(7n + 3) {
+      --nav-folder-collapse-color: var(--nav-folder-2-collapse-color);
+    }
+
+    &:nth-child(7n + 4) {
+      --nav-folder-collapse-color: var(--nav-folder-3-collapse-color);
+    }
+
+    &:nth-child(7n + 5) {
+      --nav-folder-collapse-color: var(--nav-folder-4-collapse-color);
+    }
+
+    &:nth-child(7n + 6) {
+      --nav-folder-collapse-color: var(--nav-folder-5-collapse-color);
+    }
+
+    &:nth-child(7n + 7) {
+      --nav-folder-collapse-color: var(--nav-folder-6-collapse-color);
+    }
+
+    &:nth-child(7n + 8) {
+      --nav-folder-collapse-color: var(--nav-folder-7-collapse-color);
+    }
+  }
+}
+
+// Toggle to Color Background
+body.colorful-folders_background {
+  .nav-folder-children > .nav-folder,
+  .nav-files-container > div > .nav-folder {
+    &:nth-child(7n + 2) {
+      --nav-folder-bg-color: var(--nav-folder-1-bg-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-1-bg-color-hover);
+    }
+
+    &:nth-child(7n + 3) {
+      --nav-folder-bg-color: var(--nav-folder-2-bg-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-2-bg-color-hover);
+    }
+
+    &:nth-child(7n + 4) {
+      --nav-folder-bg-color: var(--nav-folder-3-bg-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-3-bg-color-hover);
+    }
+
+    &:nth-child(7n + 5) {
+      --nav-folder-bg-color: var(--nav-folder-4-bg-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-4-bg-color-hover);
+    }
+
+    &:nth-child(7n + 6) {
+      --nav-folder-bg-color: var(--nav-folder-5-bg-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-5-bg-color-hover);
+    }
+
+    &:nth-child(7n + 7) {
+      --nav-folder-bg-color: var(--nav-folder-6-bg-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-6-bg-color-hover);
+    }
+
+    &:nth-child(7n + 8) {
+      --nav-folder-bg-color: var(--nav-folder-7-bg-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-7-bg-color-hover);
+    }
+  }
+}
+
+// Toggle for Colored Folder Text
+body.colorful-folders_text {
+  .nav-folder-children > .nav-folder,
+  .nav-files-container > div > .nav-folder {
+    &:nth-child(7n + 2) {
+      --nav-folder-color: var(--nav-folder-1-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-1-bg-color-hover);
+    }
+
+    &:nth-child(7n + 3) {
+      --nav-folder-color: var(--nav-folder-2-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-2-bg-color-hover);
+    }
+
+    &:nth-child(7n + 4) {
+      --nav-folder-color: var(--nav-folder-3-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-3-bg-color-hover);
+    }
+
+    &:nth-child(7n + 5) {
+      --nav-folder-color: var(--nav-folder-4-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-4-bg-color-hover);
+    }
+
+    &:nth-child(7n + 6) {
+      --nav-folder-color: var(--nav-folder-5-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-5-bg-color-hover);
+    }
+
+    &:nth-child(7n + 7) {
+      --nav-folder-color: var(--nav-folder-6-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-6-bg-color-hover);
+    }
+
+    &:nth-child(7n + 8) {
+      --nav-folder-color: var(--nav-folder-7-color);
+      --nav-folder-bg-color-hover: var(--nav-folder-7-bg-color-hover);
+    }
+  }
+}
+
+// Toggle for Colored Indentation Guide
+body.colorful-folders_indentation-guide {
+  .nav-folder-children > .nav-folder,
+  .nav-files-container > div > .nav-folder {
+    &:nth-child(7n + 2) {
+      --nav-indentation-guide-color: var(--nav-folder-1-indent-color);
+    }
+
+    &:nth-child(7n + 3) {
+      --nav-indentation-guide-color: var(--nav-folder-2-indent-color);
+    }
+
+    &:nth-child(7n + 4) {
+      --nav-indentation-guide-color: var(--nav-folder-3-indent-color);
+    }
+
+    &:nth-child(7n + 5) {
+      --nav-indentation-guide-color: var(--nav-folder-4-indent-color);
+    }
+
+    &:nth-child(7n + 6) {
+      --nav-indentation-guide-color: var(--nav-folder-5-indent-color);
+    }
+
+    &:nth-child(7n + 7) {
+      --nav-indentation-guide-color: var(--nav-folder-6-indent-color);
+    }
+
+    &:nth-child(7n + 8) {
+      --nav-indentation-guide-color: var(--nav-folder-7-indent-color);
+    }
+  }
+}
+
+// Toggle to inheriting Parent Folder Color
+body.colorful-folders_inherit-color {
+  .nav-files-container .nav-folder.nav-folder .nav-folder {
+    --nav-folder-color: inherit;
+    --nav-folder-bg-color: inherit;
+    --nav-folder-bg-color-hover: inherit;
+    --nav-folder-collapse-color: inherit;
+    --nav-indentation-guide-color: inherit;
+  }
+}
+
+// Alternative Folder Icons
+body.alt-folder-icons {
+  &.is-mobile .nav-folder .tree-item-icon svg.right-triangle,
+  &.is-tablet .nav-folder .tree-item-icon svg.right-triangle {
+    width: var(--mobile-folder-icon-size);
+    height: var(--mobile-folder-icon-size);
+  }
+
+  .nav-folder .tree-item-icon svg.right-triangle {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    stroke-width: var(--icon-stroke);
+    background: currentColor;
+  }
+
+  .nav-folder .tree-item-icon.is-collapsed svg.right-triangle {
+    transform: unset;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder'%3E%3Cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z'/%3E%3C/svg%3E");
+  }
+
+  // File Explorer Folder Opened
+  .nav-folder .tree-item-icon:not(.is-collapsed) svg.right-triangle {
+    transform: unset;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-open'%3E%3Cpath d='m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2'/%3E%3C/svg%3E");
+  }
+}
+
+.theme-dark {
+  //   --color-d-red-10: hsla(5, 94%, 73%, 1);
+  //   --color-d-red-20: hsla(4, 91%, 67%, 1);
+  //   --color-d-red-30: hsla(4, 88%, 61%, 1);
+  //   --color-d-red-40: hsla(2, 75%, 52%, 1);
+  --color-d-alpha-red: hsla(350, 84%, 63%, 0.2);
+  /* Orange */
+  //   --color-d-orange-10: hsla(26, 85%, 58%, 1);
+  //   --color-d-orange-20: hsla(24, 84%, 50%, 1);
+  //   --color-d-orange-30: hsla(22, 82%, 47%, 1);
+  //   --color-d-orange-40: hsla(19, 81%, 41%, 1);
+  --color-d-alpha-orange: hsla(27, 100%, 50%, 0.2);
+  /* Yellow */
+  //   --color-d-yellow-10: hsla(43, 69%, 63%, 1);
+  //   --color-d-yellow-20: hsla(42, 79%, 51%, 1);
+  //   --color-d-yellow-30: hsla(40, 78%, 48%, 1);
+  //   --color-d-yellow-40: hsla(38, 76%, 42%, 1);
+  --color-d-alpha-yellow: hsla(44, 100%, 50%, 0.2);
+  /* Green */
+  //   --color-d-green-10: hsla(152, 51%, 54%, 1);
+  //   --color-d-green-20: hsla(154, 57%, 42%, 1);
+  //   --color-d-green-30: hsla(155, 78%, 29%, 1);
+  //   --color-d-green-40: hsla(154, 75%, 26%, 1);
+  --color-d-alpha-green: hsla(74, 69%, 44%, 0.2);
+  /* Blue */
+  //   --color-d-blue-10: hsla(191, 54%, 62%, 1);
+  //   --color-d-blue-20: hsla(194, 59%, 56%, 1);
+  //   --color-d-blue-30: hsla(197, 48%, 49%, 1);
+  //   --color-d-blue-40: hsla(201, 45%, 40%, 1);
+  --color-d-alpha-blue: hsla(186, 64%, 46%, 0.2);
+  /* Purple */
+  //   --color-d-purple-10: hsla(242, 52%, 69%, 1);
+  //   --color-d-purple-20: hsla(241, 45%, 57%, 1);
+  //   --color-d-purple-30: hsla(239, 45%, 51%, 1);
+  //   --color-d-purple-40: hsla(238, 47%, 48%, 1);
+  --color-d-alpha-purple: hsla(236, 100%, 72%, 0.2);
+  --nav-folder-1-color: var(--color-red);
+  --nav-folder-1-bg-color: color-mix(
+    in srgb,
+    var(--color-d-alpha-red) 60%,
+    transparent
+  );
+  --nav-folder-1-bg-color-hover: color-mix(
+    in srgb,
+    var(--nav-folder-1-bg-color) 70%,
+    transparent
+  );
+  --nav-folder-1-collapse-color: color-mix(
+    in srgb,
+    var(--nav-folder-1-color) 50%,
+    transparent
+  );
+  --nav-folder-1-indent-color: color-mix(
+    in srgb,
+    var(--nav-folder-1-color) 25%,
+    transparent
+  );
+  --nav-folder-2-color: var(--color-orange);
+  --nav-folder-2-bg-color: color-mix(
+    in srgb,
+    var(--color-d-alpha-orange) 60%,
+    transparent
+  );
+  --nav-folder-2-bg-color-hover: color-mix(
+    in srgb,
+    var(--nav-folder-2-bg-color) 70%,
+    transparent
+  );
+  --nav-folder-2-collapse-color: color-mix(
+    in srgb,
+    var(--nav-folder-2-color) 50%,
+    transparent
+  );
+  --nav-folder-2-indent-color: color-mix(
+    in srgb,
+    var(--nav-folder-2-color) 25%,
+    transparent
+  );
+  --nav-folder-3-color: var(--color-yellow);
+  --nav-folder-3-bg-color: color-mix(
+    in srgb,
+    var(--color-d-alpha-yellow) 60%,
+    transparent
+  );
+  --nav-folder-3-bg-color-hover: color-mix(
+    in srgb,
+    var(--nav-folder-3-bg-color) 70%,
+    transparent
+  );
+  --nav-folder-3-collapse-color: color-mix(
+    in srgb,
+    var(--nav-folder-3-color) 50%,
+    transparent
+  );
+  --nav-folder-3-indent-color: color-mix(
+    in srgb,
+    var(--nav-folder-3-color) 25%,
+    transparent
+  );
+  --nav-folder-4-color: var(--color-green);
+  --nav-folder-4-bg-color: color-mix(
+    in srgb,
+    var(--color-d-alpha-green) 60%,
+    transparent
+  );
+  --nav-folder-4-bg-color-hover: color-mix(
+    in srgb,
+    var(--nav-folder-4-bg-color) 70%,
+    transparent
+  );
+  --nav-folder-4-collapse-color: color-mix(
+    in srgb,
+    var(--nav-folder-4-color) 50%,
+    transparent
+  );
+  --nav-folder-4-indent-color: color-mix(
+    in srgb,
+    var(--nav-folder-4-color) 25%,
+    transparent
+  );
+  --nav-folder-5-color: var(--color-blue);
+  --nav-folder-5-bg-color: color-mix(
+    in srgb,
+    var(--color-d-alpha-blue) 60%,
+    transparent
+  );
+  --nav-folder-5-bg-color-hover: color-mix(
+    in srgb,
+    var(--nav-folder-5-bg-color) 70%,
+    transparent
+  );
+  --nav-folder-5-collapse-color: color-mix(
+    in srgb,
+    var(--nav-folder-5-color) 50%,
+    transparent
+  );
+  --nav-folder-5-indent-color: color-mix(
+    in srgb,
+    var(--nav-folder-5-color) 25%,
+    transparent
+  );
+  --nav-folder-6-color: var(--color-cyan);
+  --nav-folder-6-bg-color: color-mix(
+    in srgb,
+    var(--color-d-alpha-purple) 60%,
+    transparent
+  );
+  --nav-folder-6-bg-color-hover: color-mix(
+    in srgb,
+    var(--nav-folder-6-bg-color) 70%,
+    transparent
+  );
+  --nav-folder-6-collapse-color: color-mix(
+    in srgb,
+    var(--nav-folder-6-color) 50%,
+    transparent
+  );
+  --nav-folder-6-indent-color: color-mix(
+    in srgb,
+    var(--nav-folder-6-color) 25%,
+    transparent
+  );
+  --nav-folder-7-color: var(--color-purple);
+  --nav-folder-7-bg-color: color-mix(
+    in srgb,
+    var(--color-d-alpha-red) 60%,
+    transparent
+  );
+  --nav-folder-7-bg-color-hover: color-mix(
+    in srgb,
+    var(--nav-folder-7-bg-color) 70%,
+    transparent
+  );
+  --nav-folder-7-collapse-color: color-mix(
+    in srgb,
+    var(--nav-folder-7-color) 50%,
+    transparent
+  );
+  --nav-folder-7-indent-color: color-mix(
+    in srgb,
+    var(--nav-folder-7-color) 25%,
+    transparent
+  );
 }

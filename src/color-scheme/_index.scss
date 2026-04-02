@@ -1,17 +1,13 @@
 // @use "./coffee";
 // @use "./flexoki";
-// @use "./LYT";
 // @use "./awesome-dark";
-// @use "./night-owl";
 @use "./primary";
 @use "./love";
 // @use "./linux";
 // @use "./nord";
-// @use "./solarized";
-// @use "./rose-pine";
+@use "./solarized";
 @use "./gruvbox";
 @use "./search";
-// @use "./night-owl";
 
 body {
   --color-gray: rgb(var(--callout-quote));

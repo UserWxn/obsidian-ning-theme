@@ -29,7 +29,9 @@ settings:
         -
             label: Gruvbox
             value: theme-gruvbox-dark
-
+        -
+            label: Solarized Osaka
+            value: theme-solarized-dark
 
 
     -   id: workspace-setting
@@ -139,5 +141,48 @@ settings:
 			-
 				label: Monochrome
 				value: colorful-folders-mono
+    
+    -
+		id: file-explorer
+		type: heading
+		level: 1
+		collapsed: true
+		title: File Explorer & Bookmarks
+    -
+        id: readme-content
+        type: info-text
+        markdown: true
+        description: 🎨 Out of the box, the toggles below affect both file explorer and bookmark folders. If you'd like them to be different colors, head down over to the **Bookmarks** section, turn on `Custom Bookmarks Folders` and set your desired colors.
+    -
+        id: alt-folder-icons
+        type: class-toggle
+        title: Toggle using Folders as Collapse Indicators
+        description: Use folders as collapse indicators instead of chevrons.
+    -
+        id: colorful-folders_text
+        type: class-toggle
+        title: Toggle Colored Folder Text
+        description: Adds colors to the name text of the folder. When hovered, folder background is colored.
+    -
+        id: colorful-folders_collapse-indicator
+        type: class-toggle
+        title: Toggle Colored Folder Collapse Indicators
+        description: Adds color to the collapse indicators of the folders.
+    -
+        id: colorful-folders_background
+        type: class-toggle
+        title: Toggle Colored Folder Backgrounds
+        description: Adds background color to folders.
+    -
+        id: colorful-folders_indentation-guide
+        type: class-toggle
+        title: Toggle Colored Folder Colored Indentation Guide
+        description: Colors folder's indentation guide based on parent folder's color.
+    -
+        id: colorful-folders_inherit-color
+        type: class-toggle
+        title: Toggle to Inherit Parent Folder Colors
+        description: The color cycles through up to 12 colors for both top level folders and subfolders by default. If you would like subfolders to be colored based on their top level folder colors, toggle this on.
+    
 
 */

@@ -13,6 +13,7 @@ body:is(.layout-cupertino):not(.is-mobile) {
     border-radius: 12px;
     transition: var(--anim-duration-moderate);
     overflow: hidden;
+    border: 1px solid var(--background-modifier-border);
   }
 }
 
