@@ -5,12 +5,12 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   --titlebar-background-focused: var(--background-secondary);
 
   // Editor panel
-  // &:not(.show-ribbon)
-  //   .workspace:not(.is-left-sidedock-open)
-  //   .mod-root
-  //   .workspace-tab-container {
-  //   margin-left: 8px;
-  // }
+  &:not(.show-ribbon) {
+    .mod-sidedock .workspace-sidedock-vault-profile,
+    .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+      margin-left: 8px;
+    }
+  }
   .workspace:is(.is-right-sidedock-open, .is-left-sidedock-open)
     .mod-root
     > .workspace-tabs.mod-top:not(:last-of-type)
@@ -76,7 +76,9 @@ body.layout-cards:not(.is-mobile) .mod-sidedock {
   }
 
   .workspace-sidedock-vault-profile {
-    margin: 8px 8px 0px 0px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    margin-right: 8px;
     border-top: none;
     border-radius: var(--layout-radius);
     background-color: var(--background-primary);

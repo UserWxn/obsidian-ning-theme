@@ -4,7 +4,7 @@
 @use "./layout-style";
 @use "./cupertino";
 @use "./minimal";
-@use "./sidedock";
+// @use "./sidedock";
 
 body:not(.is-mobile) {
   --layout-radius: var(--radius-xl);
