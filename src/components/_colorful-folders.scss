@@ -130,7 +130,7 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
       var(--color-red) var(--nav-item-tint),
       var(--text-normal)
     );
-    // background-color: rgba(var(--color-red-rgb), 0.1);
+    background-color: rgba(var(--color-red-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 3) {
     --nav-item-bold-color: color-mix(
@@ -144,7 +144,7 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
       rgb(var(--color-orange-rgb), 1) var(--nav-item-tint),
       var(--text-normal)
     );
-    // background-color: rgba(var(--color-orange-rgb), 0.1);
+    background-color: rgba(var(--color-orange-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 4) {
     --nav-item-bold-color: color-mix(
@@ -158,7 +158,7 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
       var(--color-yellow) var(--nav-item-tint),
       var(--text-normal)
     );
-    // background-color: rgba(var(--color-yellow-rgb), 0.1);
+    background-color: rgba(var(--color-yellow-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 5) {
     --nav-item-bold-color: color-mix(
@@ -172,7 +172,7 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
       var(--color-green) var(--nav-item-tint),
       var(--text-normal)
     );
-    // background-color: rgba(var(--color-green-rgb), 0.1);
+    background-color: rgba(var(--color-green-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 6) {
     --nav-item-bold-color: color-mix(
@@ -186,7 +186,7 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
       var(--color-cyan) var(--nav-item-tint),
       var(--text-normal)
     );
-    // background-color: rgba(var(--color-cyan-rgb), 0.1);
+    background-color: rgba(var(--color-cyan-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 7) {
     --nav-item-bold-color: color-mix(
@@ -200,7 +200,7 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
       var(--color-blue) var(--nav-item-tint),
       var(--text-normal)
     );
-    // background-color: rgba(var(--color-blue-rgb), 0.1);
+    background-color: rgba(var(--color-blue-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 8) {
     --nav-item-bold-color: color-mix(
@@ -214,7 +214,7 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
       var(--color-purple) var(--nav-item-tint),
       var(--text-normal)
     );
-    // background-color: rgba(var(--color-purple-rgb), 0.1);
+    background-color: rgba(var(--color-purple-rgb), 0.1);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
     --nav-item-bold-color: color-mix(
@@ -228,7 +228,7 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
       var(--color-pink) var(--nav-item-tint),
       var(--text-normal)
     );
-    // background-color: rgba(var(--color-pink-rgb), 0.1);
+    background-color: rgba(var(--color-pink-rgb), 0.1);
   }
 }
 

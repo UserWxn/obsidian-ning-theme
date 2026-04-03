@@ -35,6 +35,12 @@
   --color-base-60: #878580;
   --color-base-70: #6f6e69;
   --color-base-100: #100f0f;
+
+  --link-color: var(--color-green);
+  --link-color-hover: var(--color-green);
+
+  --link-external-color: var(--color-accent);
+  --link-external-color-hover: var(--color-accent);
 }
 
 .theme-dark.theme-flexoki-dark {

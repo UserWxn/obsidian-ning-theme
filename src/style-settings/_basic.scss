@@ -116,81 +116,54 @@ settings:
             -
                 label: Card
                 value: callout-floating 
-    -
-        id: folder-options
-        title: Folders
-        type: heading
-        level: 2
-        collapsed: true
-    -
-		id: colorful-folders
-		title: Colorful folders
-		type: class-select
-		allowEmpty: false
-		default: colorful-folders-off
-		options:
-			-
-				label: None
-				value: colorful-folders-off
-			-
-				label: Dot
-				value: colorful-folders-dot
-			-
-				label: Indicator
-				value: colorful-folders-side
-			-
-				label: Frame
-				value: colorful-folders-frame
-			-
-				label: Subtle
-				value: colorful-folders-subtle
-			-
-				label: Strong
-				value: colorful-folders-strong
-			-
-				label: Monochrome
-				value: colorful-folders-mono
+
     
     -
 		id: file-explorer
 		type: heading
-		level: 1
+		level: 2
 		collapsed: true
-		title: File Explorer & Bookmarks
-    -
-        id: readme-content
-        type: info-text
-        markdown: true
-        description: 🎨 Out of the box, the toggles below affect both file explorer and bookmark folders. If you'd like them to be different colors, head down over to the **Bookmarks** section, turn on `Custom Bookmarks Folders` and set your desired colors.
+		title: File Explorer
     -
         id: alt-folder-icons
         type: class-toggle
-        title: Toggle using Folders as Collapse Indicators
+        title: 启用文件夹图标
         description: Use folders as collapse indicators instead of chevrons.
     -
         id: colorful-folders_text
         type: class-toggle
-        title: Toggle Colored Folder Text
+        title: 彩色文件夹文字颜色
         description: Adds colors to the name text of the folder. When hovered, folder background is colored.
     -
         id: colorful-folders_collapse-indicator
         type: class-toggle
-        title: Toggle Colored Folder Collapse Indicators
+        title: 文件夹折叠指示器启用彩色
         description: Adds color to the collapse indicators of the folders.
     -
-        id: colorful-folders_background
-        type: class-toggle
-        title: Toggle Colored Folder Backgrounds
-        description: Adds background color to folders.
+        id: folders_background
+        title: 彩色文件夹背景颜色
+        type: class-select
+        allowEmpty: false
+        default: none
+        options:
+            -
+                label: None
+                value: none
+            -
+                label: Default
+                value: colorful-folders_background
+            -
+                label: Subtle
+                value: colorful-folders-subtle
     -
         id: colorful-folders_indentation-guide
         type: class-toggle
-        title: Toggle Colored Folder Colored Indentation Guide
+        title: 文件夹缩进线启用颜色
         description: Colors folder's indentation guide based on parent folder's color.
     -
         id: colorful-folders_inherit-color
         type: class-toggle
-        title: Toggle to Inherit Parent Folder Colors
+        title: 上下级文件夹颜色继承
         description: The color cycles through up to 12 colors for both top level folders and subfolders by default. If you would like subfolders to be colored based on their top level folder colors, toggle this on.
     
 
