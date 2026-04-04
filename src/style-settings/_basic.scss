@@ -3,9 +3,14 @@
 name: 📦 Ning 
 id: ning-editor
 settings:
+    -   id: colorscheme-setting
+        title: Color Scheme
+        type: heading
+        level: 2
+        collapsed: true
     -   id: ning-theme-light
         title: Light Theme
-        description: Select your preferred light mode flavor
+        description: 选择你喜欢的亮色主题
         type: class-select
         allowEmpty: false
         default: theme-love-light
@@ -19,9 +24,15 @@ settings:
         -
             label: Flexoki
             value: theme-flexoki-light
+        -
+            label: Rosé Pine
+            value: theme-rosepine-light
+        -
+            label: Anthropic
+            value: theme-anthropic-light
     -   id: ning-theme-dark
         title: Dark Theme
-        description: Select your preferred dark mode flavor
+        description: 选择你喜欢的暗色主题
         type: class-select
         allowEmpty: false
         default: theme-gruvbox-dark
@@ -39,8 +50,17 @@ settings:
             label: Flexoki
             value: theme-flexoki-dark
         -
+            label: Rosé Pine
+            value: theme-rosepine-dark
+        -
             label: Blue Topaz
             value: theme-bluetopaz-dark
+    -
+        id: settings-rain-icon
+        type: class-toggle
+        default: true
+        title: 启用彩色
+        description: 启用彩色图标与Tab背景
 
 
     -   id: workspace-setting

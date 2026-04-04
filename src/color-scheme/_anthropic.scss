@@ -1,0 +1,73 @@
+.theme-light.theme-anthropic-light {
+
+  color-scheme: light;
+
+  --accent-h: 21.1;
+  --accent-s: 62.7%;
+  --accent-l: 47.3%;
+
+  --color-l-gray-10: hsla(36, 38%, 98%, 1);
+  --color-l-gray-20: hsla(35, 36%, 96%, 1);
+  --color-l-gray-30: hsla(35, 37%, 92%, 1);
+  --color-l-gray-40: hsla(34, 34%, 90%, 1);
+  --color-l-gray-50: hsla(36, 35%, 88%, 1);
+  --color-l-gray-60: hsla(37, 38%, 83%, 1);
+  --color-l-gray-70: hsla(34, 37%, 70%, 1);
+  --color-l-gray-80: hsla(34, 29%, 60%, 1);
+  --color-l-gray-90: hsla(31, 23%, 50%, 1);
+  --color-l-gray-100: hsla(35, 28%, 40%, 1);
+  --color-l-gray-110: hsla(34, 30%, 37%, 1);
+  --color-l-gray-120: hsla(36, 32%, 30%, 1);
+  --color-l-gray-130: hsla(31, 45%, 24%, 1);
+  --color-l-gray-140: hsla(33, 54%, 17%, 1);
+
+  --color-base-00: var(--color-l-gray-10);
+  --color-base-05: var(--color-l-gray-20);
+  --color-base-10: var(--color-l-gray-30);
+  --color-base-20: var(--color-l-gray-40);
+  --color-base-25: var(--color-l-gray-50);
+  --color-base-30: var(--color-l-gray-60);
+  --color-base-35: var(--color-l-gray-70);
+  --color-base-40: var(--color-l-gray-80);
+  --color-base-50: var(--color-l-gray-90);
+  --color-base-60: var(--color-l-gray-100);
+  --color-base-70: var(--color-l-gray-120);
+  --color-base-100: var(--color-l-gray-140);
+
+
+
+  --color-red: #bd4043;
+  --color-orange: #e2660c;
+  --color-yellow: #bba538;
+  --color-green: #158237;
+  --color-cyan: #56706b;
+  --color-blue: #0054a3;
+  --color-purple: #583f84;
+  --color-pink: #bb5a38;
+
+  --color-red-rgb: 189, 64, 67;
+  --color-orange-rgb: 226, 102, 12;
+  --color-yellow-rgb: 187, 165, 56;
+  --color-green-rgb: 21, 130, 55;
+  --color-cyan-rgb: 86, 112, 107;
+  --color-blue-rgb: 0, 84, 163;
+  --color-purple-rgb: 88, 63, 132;
+  --color-pink-rgb: 187, 90, 56;
+
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+
+  --text-normal: #1a1a1a;
+  --text-muted: #6b6459;
+  --text-faint: #9c9080;
+
+  --background-primary: #f5f0e8;
+  --background-primary-alt: #ede8df;
+  --background-secondary: rgb(232, 231, 221);
+  --background-secondary-alt: #ecece4;
+  --background-modifier-border: #e4ddd3;
+  --background-modifier-border-hover: #d6cfc4;
+
+  --code-background: #ede8df;
+
+}
